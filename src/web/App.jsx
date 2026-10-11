@@ -245,7 +245,7 @@ function ProductDetail({ product, onBack, onAdd }) {
   );
 }
 
-function Cart({ cart }) {
+function Cart({ cart, onUpdate }) {
   return (
     <section id="cart-view" data-view="cart" aria-labelledby="cart-heading" className="content-view">
       <p className="eyebrow">Your selected gear</p>
@@ -261,11 +261,16 @@ function Cart({ cart }) {
           <>
             <div className="cart-lines">
               {cart.lines.map((line) => (
-                <div className="cart-line" key={`${line.productId}-${line.color}`}>
+                <div className="cart-line" key={`${line.productId}-${line.color}`} data-product-id={line.productId} data-color={line.color}>
                   <span>
                     {line.name}
                     <small>{line.color} - Qty {line.quantity}</small>
                   </span>
+                  <div className="cart-line__controls">
+                    <button type="button" data-action="decrease" aria-label={`Decrease quantity of ${line.name}`} onClick={() => onUpdate(line.productId, line.color, line.quantity - 1)} disabled={line.quantity <= 1}>-</button>
+                    <button type="button" data-action="increase" aria-label={`Increase quantity of ${line.name}`} onClick={() => onUpdate(line.productId, line.color, line.quantity + 1)}>+</button>
+                    <button type="button" data-action="remove" aria-label={`Remove ${line.name} from cart`} onClick={() => onUpdate(line.productId, line.color, 0)}>Remove</button>
+                  </div>
                   <strong>{money(line.unitPriceCents * line.quantity)}</strong>
                 </div>
               ))}
@@ -378,6 +383,15 @@ export function App() {
     window.location.hash = 'cart';
   }
 
+  async function updateCartItem(productId, color, quantity) {
+    const next = await request(`/api/cart/items/${encodeURIComponent(productId)}`, {
+      method: 'PUT',
+      body: JSON.stringify({ color, quantity }),
+    });
+    setCart(next);
+    setStatus(quantity === 0 ? 'Item removed from cart.' : 'Cart updated.');
+  }
+
   async function placeOrder(event) {
     event.preventDefault();
     try {
@@ -438,7 +452,7 @@ export function App() {
             onAdd={(product, color, quantity) => addToCart(product, color, quantity).catch((error) => setStatus(error.message))}
           />
         )}
-        {view === 'cart' && <Cart cart={cart} />}
+        {view === 'cart' && <Cart cart={cart} onUpdate={(productId, color, quantity) => updateCartItem(productId, color, quantity).catch((error) => setStatus(error.message))} />}
         {view === 'checkout' && <Checkout cart={cart} onSubmit={placeOrder} confirmation={confirmation} />}
       </main>
       <footer className="site-footer">
