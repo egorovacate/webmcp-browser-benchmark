@@ -309,7 +309,7 @@ function Checkout({ cart, onSubmit, confirmation }) {
         <aside className="order-card">
           <span>Order total</span>
           <strong>{money(cart.totalCents)}</strong>
-          <small>{itemCount} item{cart.lines.length === 1 ? '' : 's'} in cart</small>
+          <small>Check the lines above before ordering</small>
           <p>No payment details are collected.</p>
         </aside>
       </div>
