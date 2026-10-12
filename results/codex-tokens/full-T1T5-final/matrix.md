@@ -4,9 +4,9 @@ Status: completed (15/15 cells). Raw provider usage, total = input + output, cac
 
 | Mode | Task | Input | Cached (incl.) | Output | Reasoning | Total | Calls | Time |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| WebMCP | T1 | 72136 | 60928 | 356 | 69 | 72492 | 3 | 26.6 s |
-| DOM | T1 | 119347 | 98560 | 582 | 217 | 119929 | 6 | 42.3 s |
-| Playwright MCP | T1 | 64235 | 46848 | 314 | 98 | 64549 | 2 | 14.7 s |
+| WebMCP | T1 | 71878 | 61952 | 368 | 82 | 72246 | 3 | 23.7 s |
+| Playwright MCP | T1 | 101015 | 81152 | 556 | 135 | 101571 | 7 | 60.2 s |
+| DOM | T1 | 74551 | 61184 | 323 | 74 | 74874 | 6 | 20.9 s |
 | WebMCP | T2 | 86370 | 61952 | 402 | 64 | 86772 | 5 | 17.4 s |
 | DOM | T2 | 232725 | 209408 | 839 | 181 | 233564 | 12 | 73.6 s |
 | Playwright MCP | T2 | 162427 | 138752 | 715 | 180 | 163142 | 9 | 47.9 s |
@@ -22,9 +22,9 @@ Status: completed (15/15 cells). Raw provider usage, total = input + output, cac
 
 | Mode | Tasks | Input total | Output total | Reasoning total | Token total | Calls | Time total |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| WebMCP | 5 | 482770 | 2369 | 422 | 485139 | 25 | 137.4 s |
-| DOM | 5 | 1102822 | 3940 | 977 | 1106762 | 67 | 432.5 s |
-| Playwright MCP | 5 | 1364733 | 4613 | 1106 | 1369346 | 66 | 446.7 s |
+| WebMCP | 5 | 482512 | 2381 | 435 | 484893 | 25 | 134.5 s |
+| Playwright MCP | 5 | 1401513 | 4855 | 1143 | 1406368 | 71 | 492.3 s |
+| DOM | 5 | 1058026 | 3681 | 834 | 1061707 | 67 | 411.2 s |
 
 ## Diagnostics (not measurements)
 

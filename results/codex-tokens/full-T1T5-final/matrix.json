@@ -4,7 +4,7 @@
   "status": "completed",
   "completedCells": 15,
   "expectedCells": 15,
-  "note": "playwright-mcp cells use 6-tool contract (incl. browser_select_option); superseded 5-tool PW cells retained for audit",
+  "note": "T1 cells from single frozen batch 11-32; playwright-mcp cells use 6-tool contract (incl. browser_select_option)",
   "rows": [
     {
       "status": "completed",
@@ -15,74 +15,35 @@
       "tokenSource": "codex.turn.completed.usage",
       "rawProviderUsage": [
         {
-          "input_tokens": 72136,
-          "cached_input_tokens": 60928,
+          "input_tokens": 71878,
+          "cached_input_tokens": 61952,
           "cache_write_input_tokens": 0,
-          "output_tokens": 356,
-          "reasoning_output_tokens": 69
+          "output_tokens": 368,
+          "reasoning_output_tokens": 82
         }
       ],
-      "inputTokens": 72136,
-      "cachedInputTokens": 60928,
-      "uncachedInputTokens": 11208,
-      "outputTokens": 356,
-      "reasoningTokens": 69,
-      "visibleOutputTokens": 287,
-      "totalTokens": 72492,
-      "threadId": "01a12fac-5da0-75f3-9e70-4af6c321ffde",
+      "inputTokens": 71878,
+      "cachedInputTokens": 61952,
+      "uncachedInputTokens": 9926,
+      "outputTokens": 368,
+      "reasoningTokens": 82,
+      "visibleOutputTokens": 286,
+      "totalTokens": 72246,
+      "threadId": "01a12fe2-9a7d-7ad3-b734-21970274c49d",
       "toolCallCount": 3,
       "finalText": "Sonic Lite ANC — $129.00",
-      "elapsedMs": 26556,
+      "elapsedMs": 23678,
       "oraclePassed": true,
       "finalAnswerPassed": true,
       "failureCategory": null,
       "error": null,
       "resultPaths": {
-        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-33-07.494Z-00ff26cf/webmcp",
-        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-33-07.494Z-00ff26cf/webmcp/manifest.json",
-        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-33-07.494Z-00ff26cf/webmcp/summary.json",
-        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-33-07.494Z-00ff26cf/webmcp/events.jsonl"
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/webmcp",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/webmcp/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/webmcp/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/webmcp/events.jsonl"
       },
-      "batch": "2026-10-12T10-33-07.494Z-00ff26cf"
-    },
-    {
-      "status": "completed",
-      "model": "gpt-5.6-terra",
-      "mode": "visual",
-      "taskId": "T1",
-      "interface": "rendered-dom-v1",
-      "tokenSource": "codex.turn.completed.usage",
-      "rawProviderUsage": [
-        {
-          "input_tokens": 119347,
-          "cached_input_tokens": 98560,
-          "cache_write_input_tokens": 0,
-          "output_tokens": 582,
-          "reasoning_output_tokens": 217
-        }
-      ],
-      "inputTokens": 119347,
-      "cachedInputTokens": 98560,
-      "uncachedInputTokens": 20787,
-      "outputTokens": 582,
-      "reasoningTokens": 217,
-      "visibleOutputTokens": 365,
-      "totalTokens": 119929,
-      "threadId": "01a12fae-0589-7453-8167-7ba2ab41ff7a",
-      "toolCallCount": 6,
-      "finalText": "Sonic Lite ANC — $129.00",
-      "elapsedMs": 42257,
-      "oraclePassed": true,
-      "finalAnswerPassed": true,
-      "failureCategory": null,
-      "error": null,
-      "resultPaths": {
-        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-33-07.494Z-00ff26cf/visual",
-        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-33-07.494Z-00ff26cf/visual/manifest.json",
-        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-33-07.494Z-00ff26cf/visual/summary.json",
-        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-33-07.494Z-00ff26cf/visual/events.jsonl"
-      },
-      "batch": "2026-10-12T10-33-07.494Z-00ff26cf"
+      "batch": "2026-10-12T11-32-21.937Z-5288a901"
     },
     {
       "status": "completed",
@@ -93,35 +54,74 @@
       "tokenSource": "codex.turn.completed.usage",
       "rawProviderUsage": [
         {
-          "input_tokens": 64235,
-          "cached_input_tokens": 46848,
+          "input_tokens": 101015,
+          "cached_input_tokens": 81152,
           "cache_write_input_tokens": 0,
-          "output_tokens": 314,
-          "reasoning_output_tokens": 98
+          "output_tokens": 556,
+          "reasoning_output_tokens": 135
         }
       ],
-      "inputTokens": 64235,
-      "cachedInputTokens": 46848,
-      "uncachedInputTokens": 17387,
-      "outputTokens": 314,
-      "reasoningTokens": 98,
-      "visibleOutputTokens": 216,
-      "totalTokens": 64549,
-      "threadId": "01a12fd1-a4c4-7600-be56-d96ae7c7c8fd",
-      "toolCallCount": 2,
+      "inputTokens": 101015,
+      "cachedInputTokens": 81152,
+      "uncachedInputTokens": 19863,
+      "outputTokens": 556,
+      "reasoningTokens": 135,
+      "visibleOutputTokens": 421,
+      "totalTokens": 101571,
+      "threadId": "01a12fe2-f61e-7391-a206-b54ca87bb039",
+      "toolCallCount": 7,
       "finalText": "Sonic Lite ANC — $129.00",
-      "elapsedMs": 14659,
+      "elapsedMs": 60219,
       "oraclePassed": true,
       "finalAnswerPassed": true,
       "failureCategory": null,
       "error": null,
       "resultPaths": {
-        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-13-50.496Z-17bcbdd9/playwright-mcp",
-        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-13-50.496Z-17bcbdd9/playwright-mcp/manifest.json",
-        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-13-50.496Z-17bcbdd9/playwright-mcp/summary.json",
-        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-13-50.496Z-17bcbdd9/playwright-mcp/events.jsonl"
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/playwright-mcp",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/playwright-mcp/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/playwright-mcp/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/playwright-mcp/events.jsonl"
       },
-      "batch": "2026-10-12T11-13-50.496Z-17bcbdd9"
+      "batch": "2026-10-12T11-32-21.937Z-5288a901"
+    },
+    {
+      "status": "completed",
+      "model": "gpt-5.6-terra",
+      "mode": "visual",
+      "taskId": "T1",
+      "interface": "rendered-dom-v1",
+      "tokenSource": "codex.turn.completed.usage",
+      "rawProviderUsage": [
+        {
+          "input_tokens": 74551,
+          "cached_input_tokens": 61184,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 323,
+          "reasoning_output_tokens": 74
+        }
+      ],
+      "inputTokens": 74551,
+      "cachedInputTokens": 61184,
+      "uncachedInputTokens": 13367,
+      "outputTokens": 323,
+      "reasoningTokens": 74,
+      "visibleOutputTokens": 249,
+      "totalTokens": 74874,
+      "threadId": "01a12fe3-e165-75e2-b6d1-c3afef12761c",
+      "toolCallCount": 6,
+      "finalText": "Sonic Lite ANC — $129.00",
+      "elapsedMs": 20940,
+      "oraclePassed": true,
+      "finalAnswerPassed": true,
+      "failureCategory": null,
+      "error": null,
+      "resultPaths": {
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/visual",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/visual/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/visual/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/visual/events.jsonl"
+      },
+      "batch": "2026-10-12T11-32-21.937Z-5288a901"
     },
     {
       "status": "completed",
@@ -754,35 +754,35 @@
     "webmcp": {
       "mode": "webmcp",
       "tasks": 5,
-      "input": 482770,
-      "cached": 377344,
-      "output": 2369,
-      "reasoning": 422,
-      "total": 485139,
-      "ms": 137422,
+      "input": 482512,
+      "cached": 378368,
+      "output": 2381,
+      "reasoning": 435,
+      "total": 484893,
+      "ms": 134544,
       "calls": 25
-    },
-    "visual": {
-      "mode": "visual",
-      "tasks": 5,
-      "input": 1102822,
-      "cached": 982528,
-      "output": 3940,
-      "reasoning": 977,
-      "total": 1106762,
-      "ms": 432515,
-      "calls": 67
     },
     "playwright-mcp": {
       "mode": "playwright-mcp",
       "tasks": 5,
-      "input": 1364733,
-      "cached": 1236480,
-      "output": 4613,
-      "reasoning": 1106,
-      "total": 1369346,
-      "ms": 446701,
-      "calls": 66
+      "input": 1401513,
+      "cached": 1270784,
+      "output": 4855,
+      "reasoning": 1143,
+      "total": 1406368,
+      "ms": 492261,
+      "calls": 71
+    },
+    "visual": {
+      "mode": "visual",
+      "tasks": 5,
+      "input": 1058026,
+      "cached": 945152,
+      "output": 3681,
+      "reasoning": 834,
+      "total": 1061707,
+      "ms": 411198,
+      "calls": 67
     }
   }
 }
