@@ -58,14 +58,10 @@ export function buildModeMcpConfig(mode, targetUrl) {
     };
   }
   const args = [
-    playwrightCli,
-    '--headless',
-    '--browser', 'chrome',
-    '--isolated',
-    '--no-webmcp',
-    '--allowed-hosts', host,
-    '--image-responses', 'omit',
+    fileURLToPath(new URL('../../scripts/playwright-mcp-proxy.js', import.meta.url)),
+    targetUrl,
     '--viewport-size', '1440x900',
+    '--image-responses', 'omit',
   ];
   return {
     serverName: 'native_playwright',

@@ -1,12 +1,12 @@
 # Codex subscription benchmark T1-T5 FINAL (2026-10-12, gpt-5.6-terra)
 
-Status: completed (15/15 cells). Raw provider usage, total = input + output, cached input included in input. Playwright MCP cells use the 6-tool contract (incl. browser_select_option).
+Status: completed (15/15 cells). Raw provider usage, total = input + output, cached input included in input.
 
 | Mode | Task | Input | Cached (incl.) | Output | Reasoning | Total | Calls | Time |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
 | WebMCP | T1 | 71878 | 61952 | 368 | 82 | 72246 | 3 | 23.7 s |
-| Playwright MCP | T1 | 101015 | 81152 | 556 | 135 | 101571 | 7 | 60.2 s |
 | DOM | T1 | 74551 | 61184 | 323 | 74 | 74874 | 6 | 20.9 s |
+| Playwright MCP | T1 | 151046 | 134400 | 661 | 110 | 151707 | 9 | 56.9 s |
 | WebMCP | T2 | 86370 | 61952 | 402 | 64 | 86772 | 5 | 17.4 s |
 | DOM | T2 | 232725 | 209408 | 839 | 181 | 233564 | 12 | 73.6 s |
 | Playwright MCP | T2 | 162427 | 138752 | 715 | 180 | 163142 | 9 | 47.9 s |
@@ -23,8 +23,8 @@ Status: completed (15/15 cells). Raw provider usage, total = input + output, cac
 | Mode | Tasks | Input total | Output total | Reasoning total | Token total | Calls | Time total |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | WebMCP | 5 | 482512 | 2381 | 435 | 484893 | 25 | 134.5 s |
-| Playwright MCP | 5 | 1401513 | 4855 | 1143 | 1406368 | 71 | 492.3 s |
 | DOM | 5 | 1058026 | 3681 | 834 | 1061707 | 67 | 411.2 s |
+| Playwright MCP | 5 | 1451544 | 4960 | 1118 | 1456504 | 73 | 488.9 s |
 
 ## Diagnostics (not measurements)
 

@@ -4,7 +4,7 @@
   "status": "completed",
   "completedCells": 15,
   "expectedCells": 15,
-  "note": "T1 cells from single frozen batch 11-32; playwright-mcp cells use 6-tool contract (incl. browser_select_option)",
+  "note": "PW-T1 via exact-subset proxy transport (25 schemas hidden); older PW-T1 cells retained in their batch dirs",
   "rows": [
     {
       "status": "completed",
@@ -48,45 +48,6 @@
     {
       "status": "completed",
       "model": "gpt-5.6-terra",
-      "mode": "playwright-mcp",
-      "taskId": "T1",
-      "interface": "native_playwright",
-      "tokenSource": "codex.turn.completed.usage",
-      "rawProviderUsage": [
-        {
-          "input_tokens": 101015,
-          "cached_input_tokens": 81152,
-          "cache_write_input_tokens": 0,
-          "output_tokens": 556,
-          "reasoning_output_tokens": 135
-        }
-      ],
-      "inputTokens": 101015,
-      "cachedInputTokens": 81152,
-      "uncachedInputTokens": 19863,
-      "outputTokens": 556,
-      "reasoningTokens": 135,
-      "visibleOutputTokens": 421,
-      "totalTokens": 101571,
-      "threadId": "01a12fe2-f61e-7391-a206-b54ca87bb039",
-      "toolCallCount": 7,
-      "finalText": "Sonic Lite ANC — $129.00",
-      "elapsedMs": 60219,
-      "oraclePassed": true,
-      "finalAnswerPassed": true,
-      "failureCategory": null,
-      "error": null,
-      "resultPaths": {
-        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/playwright-mcp",
-        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/playwright-mcp/manifest.json",
-        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/playwright-mcp/summary.json",
-        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/playwright-mcp/events.jsonl"
-      },
-      "batch": "2026-10-12T11-32-21.937Z-5288a901"
-    },
-    {
-      "status": "completed",
-      "model": "gpt-5.6-terra",
       "mode": "visual",
       "taskId": "T1",
       "interface": "rendered-dom-v1",
@@ -122,6 +83,45 @@
         "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/visual/events.jsonl"
       },
       "batch": "2026-10-12T11-32-21.937Z-5288a901"
+    },
+    {
+      "status": "completed",
+      "model": "gpt-5.6-terra",
+      "mode": "playwright-mcp",
+      "taskId": "T1",
+      "interface": "native_playwright",
+      "tokenSource": "codex.turn.completed.usage",
+      "rawProviderUsage": [
+        {
+          "input_tokens": 151046,
+          "cached_input_tokens": 134400,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 661,
+          "reasoning_output_tokens": 110
+        }
+      ],
+      "inputTokens": 151046,
+      "cachedInputTokens": 134400,
+      "uncachedInputTokens": 16646,
+      "outputTokens": 661,
+      "reasoningTokens": 110,
+      "visibleOutputTokens": 551,
+      "totalTokens": 151707,
+      "threadId": "01a13009-e04a-7c71-a68f-afd0c5fa9034",
+      "toolCallCount": 9,
+      "finalText": "Sonic Lite ANC — $129.00",
+      "elapsedMs": 56890,
+      "oraclePassed": true,
+      "finalAnswerPassed": true,
+      "failureCategory": null,
+      "error": null,
+      "resultPaths": {
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T12-15-15.721Z-5470da90/playwright-mcp",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T12-15-15.721Z-5470da90/playwright-mcp/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T12-15-15.721Z-5470da90/playwright-mcp/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T12-15-15.721Z-5470da90/playwright-mcp/events.jsonl"
+      },
+      "batch": "2026-10-12T12-15-15.721Z-5470da90"
     },
     {
       "status": "completed",
@@ -762,17 +762,6 @@
       "ms": 134544,
       "calls": 25
     },
-    "playwright-mcp": {
-      "mode": "playwright-mcp",
-      "tasks": 5,
-      "input": 1401513,
-      "cached": 1270784,
-      "output": 4855,
-      "reasoning": 1143,
-      "total": 1406368,
-      "ms": 492261,
-      "calls": 71
-    },
     "visual": {
       "mode": "visual",
       "tasks": 5,
@@ -783,6 +772,17 @@
       "total": 1061707,
       "ms": 411198,
       "calls": 67
+    },
+    "playwright-mcp": {
+      "mode": "playwright-mcp",
+      "tasks": 5,
+      "input": 1451544,
+      "cached": 1324032,
+      "output": 4960,
+      "reasoning": 1118,
+      "total": 1456504,
+      "ms": 488932,
+      "calls": 73
     }
   }
 }

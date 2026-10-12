@@ -5,9 +5,10 @@ import { createPlaywrightMcpClient } from '../src/runner/playwright-mcp-client.j
 
 const targetUrl = process.argv[2];
 if (!targetUrl) throw new Error('Playwright MCP proxy requires a target URL');
+const extraArgs = process.argv.slice(3);
 
 const allowedNames = ['browser_navigate', 'browser_snapshot', 'browser_click', 'browser_type', 'browser_select_option', 'browser_press_key'];
-const client = createPlaywrightMcpClient({ targetUrl, headless: true, isolated: true, noWebMcp: true });
+const client = createPlaywrightMcpClient({ targetUrl, headless: true, isolated: true, noWebMcp: true, extraArgs });
 await client.start();
 const listed = await client.listTools({ allowedToolNames: allowedNames });
 const tools = listed.tools ?? [];
