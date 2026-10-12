@@ -4,13 +4,6 @@ const EXPECTED = {
   T3: { productId: 'hp-sonic-lite', color: 'black', quantity: 1, orderId: 'order-0001', totalCents: 13400 },
   T4: { productId: 'hp-sonic-lite', priceDifferenceCents: 2000 },
   T5: { productId: 'hp-sonic-lite', color: 'black', quantity: 2, orderId: 'order-0001', totalCents: 26300, lineCount: 1 },
-  T7: {
-    lines: [
-      { productId: 'mouse-orbit-2', color: 'black', quantity: 1 },
-      { productId: 'kb-copper-full', color: 'copper', quantity: 1 },
-    ],
-    subtotalCents: 19800,
-  },
 };
 
 function includesMoney(answer, cents) {
@@ -54,12 +47,6 @@ function validateBackend(taskId, snapshot) {
     const order = snapshot.orders[0];
     return snapshot.orders.length === 1 && snapshot.cart.lines.length === 0 && order?.orderId === expected.orderId && order.totalCents === expected.totalCents && order.lines.length === expected.lineCount && hasLine(order.lines, { productId: expected.productId, color: expected.color, quantity: expected.quantity });
   }
-  if (taskId === 'T7') {
-    return snapshot.orders.length === 0
-      && snapshot.cart.lines.length === expected.lines.length
-      && expected.lines.every((line) => hasLine(snapshot.cart.lines, line))
-      && snapshot.cart.subtotalCents === expected.subtotalCents;
-  }
   return false;
 }
 
@@ -71,7 +58,7 @@ function validateAnswer(taskId, answerData, finalAnswer) {
   if (taskId === 'T1') {
     return (answerData?.productId === expected.productId || answer.includes(expected.productName.toLowerCase())) && includesMoney(answer, expected.priceCents);
   }
-  if (taskId === 'T2' || taskId === 'T7') {
+  if (taskId === 'T2') {
     return (answerData?.quantity === expected.quantity || /\b2\b|two/.test(answer)) && includesMoney(answer, expected.subtotalCents);
   }
   if (taskId === 'T3') {

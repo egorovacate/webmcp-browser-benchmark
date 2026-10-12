@@ -88,40 +88,6 @@ test('oracle accepts the requested T5 line count and total without an unrequeste
   assert.deepEqual(result, { oraclePassed: true, finalAnswerPassed: true, failureCategory: null });
 });
 
-test('oracle accepts the correct T7 two-line cart and subtotal', () => {
-  const result = validateTask('T7', {
-    snapshot: {
-      cart: {
-        lines: [
-          { productId: 'mouse-orbit-2', color: 'black', quantity: 1, unitPriceCents: 5900 },
-          { productId: 'kb-copper-full', color: 'copper', quantity: 1, unitPriceCents: 13900 },
-        ],
-        subtotalCents: 19800,
-      },
-      orders: [],
-    },
-    finalAnswer: 'Total quantity: 2. Subtotal $198.00.',
-  });
-
-  assert.deepEqual(result, { oraclePassed: true, finalAnswerPassed: true, failureCategory: null });
-});
-
-test('oracle rejects a T7 cart missing one of the two required lines', () => {
-  const result = validateTask('T7', {
-    snapshot: {
-      cart: {
-        lines: [{ productId: 'mouse-orbit-2', color: 'black', quantity: 1, unitPriceCents: 5900 }],
-        subtotalCents: 5900,
-      },
-      orders: [],
-    },
-    finalAnswer: 'Total quantity: 2. Subtotal $198.00.',
-  });
-
-  assert.equal(result.oraclePassed, false);
-  assert.equal(result.failureCategory, 'backend-state-mismatch');
-});
-
 test('metrics aggregate provider token fields without estimating from text length', async () => {
   const metrics = createMetrics();
   metrics.record({ eventType: 'model_response', inputTokens: 100, cachedInputTokens: 20, outputTokens: 30, reasoningTokens: 5, totalTokens: 130, elapsedMs: 40 });
