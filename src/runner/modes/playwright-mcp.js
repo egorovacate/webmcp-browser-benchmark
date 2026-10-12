@@ -1,4 +1,4 @@
-const capabilities = ['navigate', 'accessibility_snapshot', 'element_ref', 'click_ref', 'type_ref', 'select_ref', 'fill_ref', 'press'];
+const capabilities = ['navigate', 'accessibility_snapshot', 'element_ref', 'click_ref', 'type_ref', 'select_ref', 'fill_ref', 'find_ref', 'press'];
 const toolNames = [
   'browser_navigate',
   'browser_snapshot',
@@ -6,6 +6,7 @@ const toolNames = [
   'browser_type',
   'browser_select_option',
   'browser_fill_form',
+  'browser_find',
   'browser_press_key',
 ];
 

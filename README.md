@@ -102,7 +102,7 @@ bun run test:playwright-mcp
 bun run smoke:playwright-mcp
 ```
 
-The MCP server itself exposes more tools than the comparison allows, including screenshot and evaluation tools. The benchmark filters the server result before it reaches the model and exposes only `browser_navigate`, `browser_snapshot`, `browser_click`, `browser_type`, `browser_select_option`, `browser_fill_form`, and `browser_press_key`. The server also starts with `--no-webmcp`, so the Playwright MCP arm cannot consume the page's WebMCP tools.
+The MCP server itself exposes more tools than the comparison allows, including screenshot and evaluation tools. The benchmark filters the server result before it reaches the model and exposes only `browser_navigate`, `browser_snapshot`, `browser_click`, `browser_type`, `browser_select_option`, `browser_fill_form`, `browser_find`, and `browser_press_key`. The server runs with `--image-responses omit --codegen none --console-level error` to keep tool results at their content payload. The server also starts with `--no-webmcp`, so the Playwright MCP arm cannot consume the page's WebMCP tools.
 
 ## Test tasks
 

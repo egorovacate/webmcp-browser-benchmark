@@ -10,7 +10,7 @@ const playwrightCli = join(dirname(playwrightPackage), 'cli.js');
 
 const modeTools = {
   webmcp: ['new_page', 'list_webmcp_tools', 'execute_webmcp_tool'],
-  'playwright-mcp': ['browser_navigate', 'browser_snapshot', 'browser_click', 'browser_type', 'browser_select_option', 'browser_fill_form', 'browser_press_key'],
+  'playwright-mcp': ['browser_navigate', 'browser_snapshot', 'browser_click', 'browser_type', 'browser_select_option', 'browser_fill_form', 'browser_find', 'browser_press_key'],
   visual: ['open_page', 'dom', 'click', 'type', 'select', 'press', 'scroll'],
 };
 
@@ -62,6 +62,8 @@ export function buildModeMcpConfig(mode, targetUrl) {
     targetUrl,
     '--viewport-size', '1440x900',
     '--image-responses', 'omit',
+    '--codegen', 'none',
+    '--console-level', 'error',
   ];
   return {
     serverName: 'native_playwright',
