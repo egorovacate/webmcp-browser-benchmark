@@ -57,5 +57,18 @@
       "lineCount": 1,
       "orderCount": 1
     }
+  },
+  {
+    "id": "T7",
+    "prompt": "Add one black Orbit 2 mouse and one copper Copper Full keyboard to the cart. Return the cart subtotal and total quantity. Do not place an order.",
+    "expected": {
+      "lines": [
+        { "productId": "mouse-orbit-2", "color": "black", "quantity": 1 },
+        { "productId": "kb-copper-full", "color": "copper", "quantity": 1 }
+      ],
+      "subtotalCents": 19800,
+      "cartItemCount": 2,
+      "orderCount": 0
+    }
   }
 ]

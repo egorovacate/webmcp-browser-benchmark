@@ -336,7 +336,9 @@ export function App() {
       category: next.category,
       tags: next.feature ? [next.feature] : [],
       inStockOnly: next.inStockOnly,
-      sort: 'price_asc',
+      // Filtered views stay price-sorted; only the initial paint uses a
+      // non-price order so "cheapest" cannot be read off without searching.
+      sort: next.sort ?? 'price_asc',
     });
     setProducts((await request(`/api/products?${query}`)).products);
   }, [request]);
@@ -352,7 +354,7 @@ export function App() {
   }, [request]);
 
   useEffect(() => {
-    loadProducts().catch((error) => setStatus(error.message));
+    loadProducts({ ...defaultFilters, sort: 'rating_desc' }).catch((error) => setStatus(error.message));
     request('/api/cart').then(setCart).catch((error) => setStatus(error.message));
   }, [loadProducts, request]);
 
