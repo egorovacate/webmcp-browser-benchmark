@@ -71,7 +71,7 @@ Tool discovery and execution must go through the browser's native WebMCP host. T
 
 ### 5.2 Playwright MCP
 
-The model receives the native tools from the official `@playwright/mcp` server required for navigation, accessibility snapshots, element-reference clicks, typing, dropdown selection, and key presses. Non-contract tools of the official server are hidden by a transparent capability filter (`scripts/playwright-mcp-proxy.js`) so they never enter model context; the filter passes tool schemas and results through byte-identical and implements no task logic.
+The model receives the native tools from the official `@playwright/mcp` server required for navigation, accessibility snapshots, element-reference clicks, typing, dropdown selection, form filling, and key presses. Non-contract tools of the official server are hidden by a transparent capability filter (`scripts/playwright-mcp-proxy.js`) so they never enter model context; the filter passes tool schemas and results through byte-identical and implements no task logic.
 
 WebMCP, screenshots, direct DOM evaluation, store APIs, repository files, and shell access are forbidden.
 
