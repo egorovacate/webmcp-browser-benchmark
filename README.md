@@ -2,13 +2,41 @@
 
 This is a reproducible synthetic ecommerce benchmark for comparing three browser-agent interfaces:
 
-- visual browser control through screenshots and coordinates;
+- visual browser control through DOM snapshots, CSS-selector clicks, typing, keys, and scrolling;
 - Playwright MCP through accessibility snapshots and element references;
 - WebMCP through `document.modelContext` tools and structured results.
 
 The benchmark asks the same model to complete the same shopping tasks against the same seeded store. It records provider-reported input, output, cached, reasoning, and total tokens, plus elapsed time, tool calls, invalid actions, and backend-state success.
 
 The benchmark is allowed to show that WebMCP loses. No result is considered valid until it comes from a frozen measured run.
+
+For the complete restart, implementation, and measurement procedure, see [BENCHMARK_RUNBOOK.md](BENCHMARK_RUNBOOK.md).
+
+## Run the Codex token benchmark
+
+```bash
+bun run benchmark T1
+```
+
+This runs only T1, once per interface, using **gpt-5.6-terra** through the existing ChatGPT login in Codex CLI. It never uses API keys, switches models, subtracts a baseline, silently retries, or reuses old results. `bun run run:subscription T1` is an alias.
+
+To run one interface:
+
+```bash
+bun run benchmark webmcp T1
+bun run benchmark playwright-mcp T1
+bun run benchmark dom T1
+```
+
+The interfaces are Chrome's native WebMCP host, the official Playwright MCP server, and an autonomous rendered-DOM interface in isolated Chrome (`rendered-dom-v1`). DOM exposes visible HTML, CSS-selector clicks, input, dropdowns, keys and scrolling. Playwright is its low-level browser driver, but the agent does not receive Playwright MCP or accessibility snapshots. Scripts, styles, hidden elements and SVG internals are omitted generically; the adapter has no task-solving logic. This is not native Codex CUA and requires no desktop extension. Each result records the actual interface.
+
+Each invocation writes a new directory under `results/codex-tokens/` with `matrix.md`, `matrix.json`, and per-mode raw `events.jsonl`, `summary.json`, and `manifest.json`. The output shows actual provider-reported input, cached input, output, and total tokens. Total is input + output; cached input and reasoning are subsets and are never added twice. These are the full tokens consumed by the task, including Codex instructions and tool context. A browser-only share cannot be isolated from Codex usage and is not estimated.
+
+A comparison table is generated only after the same task passes in all three modes with both oracles and verified raw usage. A failed DOM connection is not a DOM measurement. Failed attempts keep their reported usage in a separate diagnostic accounting section and contribute only to total spend. Missing usage is shown as `unknown`, never zero. The command continues through the selected modes and exits nonzero if any fails. All results are fresh; historical experimental tables are not used.
+
+Only the local synthetic store is targeted. Every Codex thread uses an isolated temporary configuration, the pinned model, the selected MCP server, and the existing ChatGPT authentication. API-key variables, repository instructions, skills, shell tools, other MCP servers and prior conversations are not passed to the scored thread.
+
+The sections below describe the older development harness; `bun run benchmark T1` is the current subscription measurement entry point.
 
 ## Local setup
 
@@ -74,7 +102,7 @@ bun run test:playwright-mcp
 bun run smoke:playwright-mcp
 ```
 
-The MCP server itself exposes more tools than the comparison allows, including screenshot and evaluation tools. The benchmark filters the server result before it reaches the model and exposes only `browser_navigate`, `browser_snapshot`, `browser_click`, `browser_type`, and `browser_press_key`. The server also starts with `--no-webmcp`, so the Playwright MCP arm cannot consume the page's WebMCP tools.
+The MCP server itself exposes more tools than the comparison allows, including screenshot and evaluation tools. The benchmark filters the server result before it reaches the model and exposes only `browser_navigate`, `browser_snapshot`, `browser_click`, `browser_type`, `browser_select_option`, and `browser_press_key`. The server also starts with `--no-webmcp`, so the Playwright MCP arm cannot consume the page's WebMCP tools.
 
 ## Test tasks
 
