@@ -4,7 +4,7 @@
   "status": "completed",
   "completedCells": 15,
   "expectedCells": 15,
-  "note": "PW-T1 via exact-subset proxy transport (25 schemas hidden); older PW-T1 cells retained in their batch dirs",
+  "note": "PW-T1 via 8-tool proxy transport (select+fill+find, codegen-none, console-error); other PW cells 6/7-tool contract",
   "rows": [
     {
       "status": "completed",
@@ -93,35 +93,35 @@
       "tokenSource": "codex.turn.completed.usage",
       "rawProviderUsage": [
         {
-          "input_tokens": 151046,
-          "cached_input_tokens": 134400,
+          "input_tokens": 131226,
+          "cached_input_tokens": 108544,
           "cache_write_input_tokens": 0,
-          "output_tokens": 661,
-          "reasoning_output_tokens": 110
+          "output_tokens": 642,
+          "reasoning_output_tokens": 134
         }
       ],
-      "inputTokens": 151046,
-      "cachedInputTokens": 134400,
-      "uncachedInputTokens": 16646,
-      "outputTokens": 661,
-      "reasoningTokens": 110,
-      "visibleOutputTokens": 551,
-      "totalTokens": 151707,
-      "threadId": "01a13009-e04a-7c71-a68f-afd0c5fa9034",
-      "toolCallCount": 9,
+      "inputTokens": 131226,
+      "cachedInputTokens": 108544,
+      "uncachedInputTokens": 22682,
+      "outputTokens": 642,
+      "reasoningTokens": 134,
+      "visibleOutputTokens": 508,
+      "totalTokens": 131868,
+      "threadId": "01a13098-4e45-72c2-a1fd-3d0da96544fe",
+      "toolCallCount": 8,
       "finalText": "Sonic Lite ANC — $129.00",
-      "elapsedMs": 56890,
+      "elapsedMs": 89264,
       "oraclePassed": true,
       "finalAnswerPassed": true,
       "failureCategory": null,
       "error": null,
       "resultPaths": {
-        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T12-15-15.721Z-5470da90/playwright-mcp",
-        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T12-15-15.721Z-5470da90/playwright-mcp/manifest.json",
-        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T12-15-15.721Z-5470da90/playwright-mcp/summary.json",
-        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T12-15-15.721Z-5470da90/playwright-mcp/events.jsonl"
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T14-50-50.032Z-1752d005/playwright-mcp",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T14-50-50.032Z-1752d005/playwright-mcp/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T14-50-50.032Z-1752d005/playwright-mcp/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T14-50-50.032Z-1752d005/playwright-mcp/events.jsonl"
       },
-      "batch": "2026-10-12T12-15-15.721Z-5470da90"
+      "batch": "2026-10-12T14-50-50.032Z-1752d005"
     },
     {
       "status": "completed",
@@ -776,13 +776,13 @@
     "playwright-mcp": {
       "mode": "playwright-mcp",
       "tasks": 5,
-      "input": 1451544,
-      "cached": 1324032,
-      "output": 4960,
-      "reasoning": 1118,
-      "total": 1456504,
-      "ms": 488932,
-      "calls": 73
+      "input": 1431724,
+      "cached": 1298176,
+      "output": 4941,
+      "reasoning": 1142,
+      "total": 1436665,
+      "ms": 521306,
+      "calls": 72
     }
   }
 }
