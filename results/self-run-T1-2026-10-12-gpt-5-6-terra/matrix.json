@@ -1,0 +1,66 @@
+{
+  "title": "self-run T1 2026-10-12 (reference model gpt-5.6-terra, no model calls)",
+  "method": "scripted flows, exact runtimes/handlers, fresh store, oracle-checked, o200k_base. No model: output/reasoning n/a.",
+  "rows": [
+    {
+      "task": "T1",
+      "interface": "webmcp",
+      "calls": 1,
+      "inputSchemas": 427,
+      "inputObs": 264,
+      "inputTokens": 691,
+      "answerTokens": 9,
+      "flowMs": 14,
+      "oraclePassed": true,
+      "finalAnswerPassed": true,
+      "totalTokens": 700
+    },
+    {
+      "task": "T1",
+      "interface": "playwright-cli",
+      "calls": 7,
+      "inputSchemas": 302,
+      "inputObs": 4788,
+      "inputTokens": 5090,
+      "answerTokens": 9,
+      "flowMs": 10685,
+      "oraclePassed": true,
+      "finalAnswerPassed": true,
+      "note": "prototype /tmp proxy",
+      "totalTokens": 5099
+    },
+    {
+      "task": "T1",
+      "interface": "playwright-mcp",
+      "calls": 7,
+      "inputSchemas": 1465,
+      "inputObs": 3841,
+      "inputTokens": 5306,
+      "answerTokens": 9,
+      "flowMs": 4607,
+      "oraclePassed": true,
+      "finalAnswerPassed": true,
+      "totalTokens": 5315
+    },
+    {
+      "task": "T1",
+      "interface": "visual",
+      "calls": 6,
+      "inputSchemas": 361,
+      "inputObs": 8670,
+      "inputTokens": 9031,
+      "answerTokens": 9,
+      "flowMs": 3998,
+      "oraclePassed": true,
+      "finalAnswerPassed": true,
+      "totalTokens": 9040
+    }
+  ],
+  "totals": {
+    "calls": 21,
+    "inputTokens": 20118,
+    "answerTokens": 36,
+    "totalTokens": 20154,
+    "flowMs": 19304
+  }
+}

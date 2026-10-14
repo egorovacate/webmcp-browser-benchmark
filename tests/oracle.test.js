@@ -39,6 +39,21 @@ test('oracle rejects a wrong cart quantity even when the final answer claims suc
   assert.equal(result.failureCategory, 'backend-state-mismatch');
 });
 
+test('oracle accepts the correct T2 cart line and cart subtotal', () => {
+  const result = validateTask('T2', {
+    snapshot: {
+      cart: {
+        lines: [{ productId: 'hp-sonic-lite', color: 'black', quantity: 2, unitPriceCents: 12900 }],
+        subtotalCents: 25800,
+      },
+      orders: [],
+    },
+    finalAnswer: 'Total quantity: 2. Subtotal $258.00.',
+  });
+
+  assert.deepEqual(result, { oraclePassed: true, finalAnswerPassed: true, failureCategory: null });
+});
+
 test('oracle validates the order state and returned final answer', () => {
   const result = validateTask('T3', {
     snapshot: {
@@ -52,6 +67,22 @@ test('oracle validates the order state and returned final answer', () => {
       }],
     },
     finalAnswer: 'Order order-0001 confirmed. Total $134.00.',
+  });
+
+  assert.deepEqual(result, { oraclePassed: true, finalAnswerPassed: true, failureCategory: null });
+});
+
+test('oracle accepts the requested T5 line count and total without an unrequested order id', () => {
+  const result = validateTask('T5', {
+    snapshot: {
+      cart: { lines: [] },
+      orders: [{
+        orderId: 'order-0001',
+        totalCents: 26300,
+        lines: [{ productId: 'hp-sonic-lite', color: 'black', quantity: 2 }],
+      }],
+    },
+    finalAnswer: '1 line, total $263.00.',
   });
 
   assert.deepEqual(result, { oraclePassed: true, finalAnswerPassed: true, failureCategory: null });

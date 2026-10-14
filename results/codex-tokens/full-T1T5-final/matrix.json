@@ -1,0 +1,788 @@
+{
+  "model": "gpt-5.6-terra",
+  "date": "2026-10-12",
+  "status": "completed",
+  "completedCells": 15,
+  "expectedCells": 15,
+  "note": "PW-T1 via 8-tool proxy transport (select+fill+find, codegen-none, console-error); other PW cells 6/7-tool contract",
+  "rows": [
+    {
+      "status": "completed",
+      "model": "gpt-5.6-terra",
+      "mode": "webmcp",
+      "taskId": "T1",
+      "interface": "native_webmcp",
+      "tokenSource": "codex.turn.completed.usage",
+      "rawProviderUsage": [
+        {
+          "input_tokens": 71878,
+          "cached_input_tokens": 61952,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 368,
+          "reasoning_output_tokens": 82
+        }
+      ],
+      "inputTokens": 71878,
+      "cachedInputTokens": 61952,
+      "uncachedInputTokens": 9926,
+      "outputTokens": 368,
+      "reasoningTokens": 82,
+      "visibleOutputTokens": 286,
+      "totalTokens": 72246,
+      "threadId": "01a12fe2-9a7d-7ad3-b734-21970274c49d",
+      "toolCallCount": 3,
+      "finalText": "Sonic Lite ANC — $129.00",
+      "elapsedMs": 23678,
+      "oraclePassed": true,
+      "finalAnswerPassed": true,
+      "failureCategory": null,
+      "error": null,
+      "resultPaths": {
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/webmcp",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/webmcp/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/webmcp/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/webmcp/events.jsonl"
+      },
+      "batch": "2026-10-12T11-32-21.937Z-5288a901"
+    },
+    {
+      "status": "completed",
+      "model": "gpt-5.6-terra",
+      "mode": "visual",
+      "taskId": "T1",
+      "interface": "rendered-dom-v1",
+      "tokenSource": "codex.turn.completed.usage",
+      "rawProviderUsage": [
+        {
+          "input_tokens": 74551,
+          "cached_input_tokens": 61184,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 323,
+          "reasoning_output_tokens": 74
+        }
+      ],
+      "inputTokens": 74551,
+      "cachedInputTokens": 61184,
+      "uncachedInputTokens": 13367,
+      "outputTokens": 323,
+      "reasoningTokens": 74,
+      "visibleOutputTokens": 249,
+      "totalTokens": 74874,
+      "threadId": "01a12fe3-e165-75e2-b6d1-c3afef12761c",
+      "toolCallCount": 6,
+      "finalText": "Sonic Lite ANC — $129.00",
+      "elapsedMs": 20940,
+      "oraclePassed": true,
+      "finalAnswerPassed": true,
+      "failureCategory": null,
+      "error": null,
+      "resultPaths": {
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/visual",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/visual/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/visual/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-32-21.937Z-5288a901/visual/events.jsonl"
+      },
+      "batch": "2026-10-12T11-32-21.937Z-5288a901"
+    },
+    {
+      "status": "completed",
+      "model": "gpt-5.6-terra",
+      "mode": "playwright-mcp",
+      "taskId": "T1",
+      "interface": "native_playwright",
+      "tokenSource": "codex.turn.completed.usage",
+      "rawProviderUsage": [
+        {
+          "input_tokens": 131226,
+          "cached_input_tokens": 108544,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 642,
+          "reasoning_output_tokens": 134
+        }
+      ],
+      "inputTokens": 131226,
+      "cachedInputTokens": 108544,
+      "uncachedInputTokens": 22682,
+      "outputTokens": 642,
+      "reasoningTokens": 134,
+      "visibleOutputTokens": 508,
+      "totalTokens": 131868,
+      "threadId": "01a13098-4e45-72c2-a1fd-3d0da96544fe",
+      "toolCallCount": 8,
+      "finalText": "Sonic Lite ANC — $129.00",
+      "elapsedMs": 89264,
+      "oraclePassed": true,
+      "finalAnswerPassed": true,
+      "failureCategory": null,
+      "error": null,
+      "resultPaths": {
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T14-50-50.032Z-1752d005/playwright-mcp",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T14-50-50.032Z-1752d005/playwright-mcp/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T14-50-50.032Z-1752d005/playwright-mcp/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T14-50-50.032Z-1752d005/playwright-mcp/events.jsonl"
+      },
+      "batch": "2026-10-12T14-50-50.032Z-1752d005"
+    },
+    {
+      "status": "completed",
+      "model": "gpt-5.6-terra",
+      "mode": "webmcp",
+      "taskId": "T2",
+      "interface": "native_webmcp",
+      "tokenSource": "codex.turn.completed.usage",
+      "rawProviderUsage": [
+        {
+          "input_tokens": 86370,
+          "cached_input_tokens": 61952,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 402,
+          "reasoning_output_tokens": 64
+        }
+      ],
+      "inputTokens": 86370,
+      "cachedInputTokens": 61952,
+      "uncachedInputTokens": 24418,
+      "outputTokens": 402,
+      "reasoningTokens": 64,
+      "visibleOutputTokens": 338,
+      "totalTokens": 86772,
+      "threadId": "01a12fae-bcfa-78b0-b3a0-ded85fc36e50",
+      "toolCallCount": 5,
+      "finalText": "Subtotal: $258.00; total quantity: 2",
+      "elapsedMs": 17357,
+      "oraclePassed": true,
+      "finalAnswerPassed": true,
+      "failureCategory": null,
+      "error": null,
+      "resultPaths": {
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-35-43.123Z-2335226f/webmcp",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-35-43.123Z-2335226f/webmcp/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-35-43.123Z-2335226f/webmcp/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-35-43.123Z-2335226f/webmcp/events.jsonl"
+      },
+      "batch": "2026-10-12T10-35-43.123Z-2335226f"
+    },
+    {
+      "status": "completed",
+      "model": "gpt-5.6-terra",
+      "mode": "visual",
+      "taskId": "T2",
+      "interface": "rendered-dom-v1",
+      "tokenSource": "codex.turn.completed.usage",
+      "rawProviderUsage": [
+        {
+          "input_tokens": 232725,
+          "cached_input_tokens": 209408,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 839,
+          "reasoning_output_tokens": 181
+        }
+      ],
+      "inputTokens": 232725,
+      "cachedInputTokens": 209408,
+      "uncachedInputTokens": 23317,
+      "outputTokens": 839,
+      "reasoningTokens": 181,
+      "visibleOutputTokens": 658,
+      "totalTokens": 233564,
+      "threadId": "01a12faf-e7fa-7192-949d-d838289f0dc3",
+      "toolCallCount": 12,
+      "finalText": "Subtotal: $258.00; Total quantity: 2",
+      "elapsedMs": 73606,
+      "oraclePassed": true,
+      "finalAnswerPassed": true,
+      "failureCategory": null,
+      "error": null,
+      "resultPaths": {
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-35-43.123Z-2335226f/visual",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-35-43.123Z-2335226f/visual/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-35-43.123Z-2335226f/visual/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-35-43.123Z-2335226f/visual/events.jsonl"
+      },
+      "batch": "2026-10-12T10-35-43.123Z-2335226f"
+    },
+    {
+      "status": "completed",
+      "model": "gpt-5.6-terra",
+      "mode": "playwright-mcp",
+      "taskId": "T2",
+      "interface": "native_playwright",
+      "tokenSource": "codex.turn.completed.usage",
+      "rawProviderUsage": [
+        {
+          "input_tokens": 162427,
+          "cached_input_tokens": 138752,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 715,
+          "reasoning_output_tokens": 180
+        }
+      ],
+      "inputTokens": 162427,
+      "cachedInputTokens": 138752,
+      "uncachedInputTokens": 23675,
+      "outputTokens": 715,
+      "reasoningTokens": 180,
+      "visibleOutputTokens": 535,
+      "totalTokens": 163142,
+      "threadId": "01a12fd2-4e2a-7dc3-b114-a61ff3c0a198",
+      "toolCallCount": 9,
+      "finalText": "Subtotal: $258.00; total quantity: 2",
+      "elapsedMs": 47893,
+      "oraclePassed": true,
+      "finalAnswerPassed": true,
+      "failureCategory": null,
+      "error": null,
+      "resultPaths": {
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-14-33.804Z-c0205e25/playwright-mcp",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-14-33.804Z-c0205e25/playwright-mcp/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-14-33.804Z-c0205e25/playwright-mcp/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-14-33.804Z-c0205e25/playwright-mcp/events.jsonl"
+      },
+      "batch": "2026-10-12T11-14-33.804Z-c0205e25"
+    },
+    {
+      "status": "completed",
+      "model": "gpt-5.6-terra",
+      "mode": "webmcp",
+      "taskId": "T3",
+      "interface": "native_webmcp",
+      "tokenSource": "codex.turn.completed.usage",
+      "rawProviderUsage": [
+        {
+          "input_tokens": 104175,
+          "cached_input_tokens": 85248,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 463,
+          "reasoning_output_tokens": 80
+        }
+      ],
+      "inputTokens": 104175,
+      "cachedInputTokens": 85248,
+      "uncachedInputTokens": 18927,
+      "outputTokens": 463,
+      "reasoningTokens": 80,
+      "visibleOutputTokens": 383,
+      "totalTokens": 104638,
+      "threadId": "01a12fb1-14c8-77c1-9801-21c80073528d",
+      "toolCallCount": 5,
+      "finalText": "order-0001 — $134.00",
+      "elapsedMs": 27767,
+      "oraclePassed": true,
+      "finalAnswerPassed": true,
+      "failureCategory": null,
+      "error": null,
+      "resultPaths": {
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-38-16.580Z-c1398a2d/webmcp",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-38-16.580Z-c1398a2d/webmcp/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-38-16.580Z-c1398a2d/webmcp/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-38-16.580Z-c1398a2d/webmcp/events.jsonl"
+      },
+      "batch": "2026-10-12T10-38-16.580Z-c1398a2d"
+    },
+    {
+      "status": "completed",
+      "model": "gpt-5.6-terra",
+      "mode": "visual",
+      "taskId": "T3",
+      "interface": "rendered-dom-v1",
+      "tokenSource": "codex.turn.completed.usage",
+      "rawProviderUsage": [
+        {
+          "input_tokens": 241804,
+          "cached_input_tokens": 219648,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 930,
+          "reasoning_output_tokens": 230
+        }
+      ],
+      "inputTokens": 241804,
+      "cachedInputTokens": 219648,
+      "uncachedInputTokens": 22156,
+      "outputTokens": 930,
+      "reasoningTokens": 230,
+      "visibleOutputTokens": 700,
+      "totalTokens": 242734,
+      "threadId": "01a12fb2-acde-7621-a49d-6e66c4c771a1",
+      "toolCallCount": 17,
+      "finalText": "order-0001 — $134.00",
+      "elapsedMs": 164941,
+      "oraclePassed": true,
+      "finalAnswerPassed": true,
+      "failureCategory": null,
+      "error": null,
+      "resultPaths": {
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-38-16.580Z-c1398a2d/visual",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-38-16.580Z-c1398a2d/visual/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-38-16.580Z-c1398a2d/visual/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-38-16.580Z-c1398a2d/visual/events.jsonl"
+      },
+      "batch": "2026-10-12T10-38-16.580Z-c1398a2d"
+    },
+    {
+      "status": "completed",
+      "model": "gpt-5.6-terra",
+      "mode": "playwright-mcp",
+      "taskId": "T3",
+      "interface": "native_playwright",
+      "tokenSource": "codex.turn.completed.usage",
+      "rawProviderUsage": [
+        {
+          "input_tokens": 253766,
+          "cached_input_tokens": 231680,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 842,
+          "reasoning_output_tokens": 191
+        }
+      ],
+      "inputTokens": 253766,
+      "cachedInputTokens": 231680,
+      "uncachedInputTokens": 22086,
+      "outputTokens": 842,
+      "reasoningTokens": 191,
+      "visibleOutputTokens": 651,
+      "totalTokens": 254608,
+      "threadId": "01a12fd3-23c8-73b0-bfdc-2176719cd189",
+      "toolCallCount": 18,
+      "finalText": "Order ID: order-0001  \nTotal: $134.00",
+      "elapsedMs": 89603,
+      "oraclePassed": true,
+      "finalAnswerPassed": true,
+      "failureCategory": null,
+      "error": null,
+      "resultPaths": {
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-15-28.744Z-dfc16f98/playwright-mcp",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-15-28.744Z-dfc16f98/playwright-mcp/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-15-28.744Z-dfc16f98/playwright-mcp/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-15-28.744Z-dfc16f98/playwright-mcp/events.jsonl"
+      },
+      "batch": "2026-10-12T11-15-28.744Z-dfc16f98"
+    },
+    {
+      "status": "completed",
+      "model": "gpt-5.6-terra",
+      "mode": "webmcp",
+      "taskId": "T4",
+      "interface": "native_webmcp",
+      "tokenSource": "codex.turn.completed.usage",
+      "rawProviderUsage": [
+        {
+          "input_tokens": 72469,
+          "cached_input_tokens": 55040,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 408,
+          "reasoning_output_tokens": 126
+        }
+      ],
+      "inputTokens": 72469,
+      "cachedInputTokens": 55040,
+      "uncachedInputTokens": 17429,
+      "outputTokens": 408,
+      "reasoningTokens": 126,
+      "visibleOutputTokens": 282,
+      "totalTokens": 72877,
+      "threadId": "01a12fb5-41f0-79e2-be3f-3037ab0737aa",
+      "toolCallCount": 3,
+      "finalText": "Sonic Lite ANC — $20 difference.",
+      "elapsedMs": 25333,
+      "oraclePassed": true,
+      "finalAnswerPassed": true,
+      "failureCategory": null,
+      "error": null,
+      "resultPaths": {
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-42-50.292Z-ce1523d2/webmcp",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-42-50.292Z-ce1523d2/webmcp/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-42-50.292Z-ce1523d2/webmcp/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-42-50.292Z-ce1523d2/webmcp/events.jsonl"
+      },
+      "batch": "2026-10-12T10-42-50.292Z-ce1523d2"
+    },
+    {
+      "status": "completed",
+      "model": "gpt-5.6-terra",
+      "mode": "visual",
+      "taskId": "T4",
+      "interface": "rendered-dom-v1",
+      "tokenSource": "codex.turn.completed.usage",
+      "rawProviderUsage": [
+        {
+          "input_tokens": 87685,
+          "cached_input_tokens": 71168,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 389,
+          "reasoning_output_tokens": 89
+        }
+      ],
+      "inputTokens": 87685,
+      "cachedInputTokens": 71168,
+      "uncachedInputTokens": 16517,
+      "outputTokens": 389,
+      "reasoningTokens": 89,
+      "visibleOutputTokens": 300,
+      "totalTokens": 88074,
+      "threadId": "01a12fb6-e013-72d1-a2a2-d31fc4e4e5f1",
+      "toolCallCount": 6,
+      "finalText": "Sonic Lite ANC — $20.00 difference.",
+      "elapsedMs": 34850,
+      "oraclePassed": true,
+      "finalAnswerPassed": true,
+      "failureCategory": null,
+      "error": null,
+      "resultPaths": {
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-42-50.292Z-ce1523d2/visual",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-42-50.292Z-ce1523d2/visual/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-42-50.292Z-ce1523d2/visual/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-42-50.292Z-ce1523d2/visual/events.jsonl"
+      },
+      "batch": "2026-10-12T10-42-50.292Z-ce1523d2"
+    },
+    {
+      "status": "completed",
+      "model": "gpt-5.6-terra",
+      "mode": "playwright-mcp",
+      "taskId": "T4",
+      "interface": "native_playwright",
+      "tokenSource": "codex.turn.completed.usage",
+      "rawProviderUsage": [
+        {
+          "input_tokens": 97160,
+          "cached_input_tokens": 77312,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 560,
+          "reasoning_output_tokens": 179
+        }
+      ],
+      "inputTokens": 97160,
+      "cachedInputTokens": 77312,
+      "uncachedInputTokens": 19848,
+      "outputTokens": 560,
+      "reasoningTokens": 179,
+      "visibleOutputTokens": 381,
+      "totalTokens": 97720,
+      "threadId": "01a12fd4-a058-7853-92f5-497b89ef1ee3",
+      "toolCallCount": 6,
+      "finalText": "Sonic Lite ANC — $20.00 cheaper.",
+      "elapsedMs": 61747,
+      "oraclePassed": true,
+      "finalAnswerPassed": true,
+      "failureCategory": null,
+      "error": null,
+      "resultPaths": {
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-17-06.056Z-5337deb8/playwright-mcp",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-17-06.056Z-5337deb8/playwright-mcp/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-17-06.056Z-5337deb8/playwright-mcp/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-17-06.056Z-5337deb8/playwright-mcp/events.jsonl"
+      },
+      "batch": "2026-10-12T11-17-06.056Z-5337deb8"
+    },
+    {
+      "status": "completed",
+      "model": "gpt-5.6-terra",
+      "mode": "webmcp",
+      "taskId": "T5",
+      "interface": "native_webmcp",
+      "tokenSource": "codex.turn.completed.usage",
+      "rawProviderUsage": [
+        {
+          "input_tokens": 147620,
+          "cached_input_tokens": 114176,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 740,
+          "reasoning_output_tokens": 83
+        }
+      ],
+      "inputTokens": 147620,
+      "cachedInputTokens": 114176,
+      "uncachedInputTokens": 33444,
+      "outputTokens": 740,
+      "reasoningTokens": 83,
+      "visibleOutputTokens": 657,
+      "totalTokens": 148360,
+      "threadId": "01a12fc8-3d66-73a0-8bc5-caa582d64b46",
+      "toolCallCount": 9,
+      "finalText": "1 line, total $263.00",
+      "elapsedMs": 40409,
+      "oraclePassed": true,
+      "finalAnswerPassed": true,
+      "failureCategory": null,
+      "error": null,
+      "resultPaths": {
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-03-34.142Z-c10cd773/webmcp",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-03-34.142Z-c10cd773/webmcp/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-03-34.142Z-c10cd773/webmcp/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-03-34.142Z-c10cd773/webmcp/events.jsonl"
+      },
+      "batch": "2026-10-12T11-03-34.142Z-c10cd773"
+    },
+    {
+      "status": "completed",
+      "model": "gpt-5.6-terra",
+      "mode": "playwright-mcp",
+      "taskId": "T5",
+      "interface": "native_playwright",
+      "tokenSource": "codex.turn.completed.usage",
+      "rawProviderUsage": [
+        {
+          "input_tokens": 787145,
+          "cached_input_tokens": 741888,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2182,
+          "reasoning_output_tokens": 458
+        }
+      ],
+      "inputTokens": 787145,
+      "cachedInputTokens": 741888,
+      "uncachedInputTokens": 45257,
+      "outputTokens": 2182,
+      "reasoningTokens": 458,
+      "visibleOutputTokens": 1724,
+      "totalTokens": 789327,
+      "threadId": "01a12fd5-a9b0-7dc1-844d-790bec52ba49",
+      "toolCallCount": 31,
+      "finalText": "1 line, $263.00",
+      "elapsedMs": 232799,
+      "oraclePassed": true,
+      "finalAnswerPassed": true,
+      "failureCategory": null,
+      "error": null,
+      "resultPaths": {
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-18-14.100Z-f1039fb9/playwright-mcp",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-18-14.100Z-f1039fb9/playwright-mcp/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-18-14.100Z-f1039fb9/playwright-mcp/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-18-14.100Z-f1039fb9/playwright-mcp/events.jsonl"
+      },
+      "batch": "2026-10-12T11-18-14.100Z-f1039fb9"
+    },
+    {
+      "status": "completed",
+      "model": "gpt-5.6-terra",
+      "mode": "visual",
+      "taskId": "T5",
+      "interface": "rendered-dom-v1",
+      "tokenSource": "codex.turn.completed.usage",
+      "rawProviderUsage": [
+        {
+          "input_tokens": 421261,
+          "cached_input_tokens": 383744,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1200,
+          "reasoning_output_tokens": 260
+        }
+      ],
+      "inputTokens": 421261,
+      "cachedInputTokens": 383744,
+      "uncachedInputTokens": 37517,
+      "outputTokens": 1200,
+      "reasoningTokens": 260,
+      "visibleOutputTokens": 940,
+      "totalTokens": 422461,
+      "threadId": "01a12fcc-8699-7ba1-bee8-bd1fdf28daf3",
+      "toolCallCount": 26,
+      "finalText": "1 line, $263.00",
+      "elapsedMs": 116861,
+      "oraclePassed": true,
+      "finalAnswerPassed": true,
+      "failureCategory": null,
+      "error": null,
+      "resultPaths": {
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-08-15.002Z-090d7849/visual",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-08-15.002Z-090d7849/visual/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-08-15.002Z-090d7849/visual/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-08-15.002Z-090d7849/visual/events.jsonl"
+      },
+      "batch": "2026-10-12T11-08-15.002Z-090d7849"
+    }
+  ],
+  "diagnostics": [
+    {
+      "status": "failed",
+      "model": "gpt-5.6-terra",
+      "mode": "playwright-mcp",
+      "taskId": "T5",
+      "interface": "native_playwright",
+      "tokenSource": "codex.turn.completed.usage",
+      "rawProviderUsage": [
+        {
+          "input_tokens": 496540,
+          "cached_input_tokens": 451584,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1480,
+          "reasoning_output_tokens": 161
+        }
+      ],
+      "inputTokens": 496540,
+      "cachedInputTokens": 451584,
+      "uncachedInputTokens": 44956,
+      "outputTokens": 1480,
+      "reasoningTokens": 161,
+      "visibleOutputTokens": 1319,
+      "totalTokens": 498020,
+      "threadId": "01a12fb8-5f87-7b23-8d55-32cf65d07dd1",
+      "toolCallCount": 28,
+      "finalText": "2 items, $263.00",
+      "elapsedMs": 149706,
+      "oraclePassed": true,
+      "finalAnswerPassed": false,
+      "failureCategory": "final-answer-mismatch",
+      "error": "Task oracle failed: 2 items, $263.00",
+      "resultPaths": {
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-45-15.595Z-0bd1dfc2/playwright-mcp",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-45-15.595Z-0bd1dfc2/playwright-mcp/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-45-15.595Z-0bd1dfc2/playwright-mcp/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-45-15.595Z-0bd1dfc2/playwright-mcp/events.jsonl"
+      },
+      "batch": "2026-10-12T10-45-15.595Z-0bd1dfc2"
+    },
+    {
+      "status": "failed",
+      "model": "gpt-5.6-terra",
+      "mode": "visual",
+      "taskId": "T5",
+      "interface": "rendered-dom-v1",
+      "tokenSource": "codex.turn.completed.usage",
+      "rawProviderUsage": [
+        {
+          "input_tokens": 388272,
+          "cached_input_tokens": 361984,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1442,
+          "reasoning_output_tokens": 265
+        }
+      ],
+      "inputTokens": 388272,
+      "cachedInputTokens": 361984,
+      "uncachedInputTokens": 26288,
+      "outputTokens": 1442,
+      "reasoningTokens": 265,
+      "visibleOutputTokens": 1177,
+      "totalTokens": 389714,
+      "threadId": "01a12fba-a8aa-74a3-94fe-b7499c12d97c",
+      "toolCallCount": 26,
+      "finalText": "2 items, $263.00",
+      "elapsedMs": 235284,
+      "oraclePassed": true,
+      "finalAnswerPassed": false,
+      "failureCategory": "final-answer-mismatch",
+      "error": "Task oracle failed: 2 items, $263.00",
+      "resultPaths": {
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-45-15.595Z-0bd1dfc2/visual",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-45-15.595Z-0bd1dfc2/visual/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-45-15.595Z-0bd1dfc2/visual/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-45-15.595Z-0bd1dfc2/visual/events.jsonl"
+      },
+      "batch": "2026-10-12T10-45-15.595Z-0bd1dfc2"
+    },
+    {
+      "status": "failed",
+      "model": "gpt-5.6-terra",
+      "mode": "playwright-mcp",
+      "taskId": "T5",
+      "interface": "native_playwright",
+      "tokenSource": "codex.turn.completed.usage",
+      "rawProviderUsage": [
+        {
+          "input_tokens": 471749,
+          "cached_input_tokens": 438016,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1825,
+          "reasoning_output_tokens": 392
+        }
+      ],
+      "inputTokens": 471749,
+      "cachedInputTokens": 438016,
+      "uncachedInputTokens": 33733,
+      "outputTokens": 1825,
+      "reasoningTokens": 392,
+      "visibleOutputTokens": 1433,
+      "totalTokens": 473574,
+      "threadId": "01a12fbe-ea5d-7921-a081-b48090c1dcc6",
+      "toolCallCount": 28,
+      "finalText": "2 items, $263.00",
+      "elapsedMs": 158838,
+      "oraclePassed": true,
+      "finalAnswerPassed": false,
+      "failureCategory": "final-answer-mismatch",
+      "error": "Task oracle failed: 2 items, $263.00",
+      "resultPaths": {
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-53-23.099Z-1ec18fb4/playwright-mcp",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-53-23.099Z-1ec18fb4/playwright-mcp/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-53-23.099Z-1ec18fb4/playwright-mcp/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T10-53-23.099Z-1ec18fb4/playwright-mcp/events.jsonl"
+      },
+      "batch": "2026-10-12T10-53-23.099Z-1ec18fb4"
+    },
+    {
+      "status": "failed",
+      "model": "gpt-5.6-terra",
+      "mode": "visual",
+      "taskId": "T5",
+      "interface": "rendered-dom-v1",
+      "tokenSource": "codex.turn.completed.usage",
+      "rawProviderUsage": [
+        {
+          "input_tokens": 349248,
+          "cached_input_tokens": 315648,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1267,
+          "reasoning_output_tokens": 223
+        }
+      ],
+      "inputTokens": 349248,
+      "cachedInputTokens": 315648,
+      "uncachedInputTokens": 33600,
+      "outputTokens": 1267,
+      "reasoningTokens": 223,
+      "visibleOutputTokens": 1044,
+      "totalTokens": 350515,
+      "threadId": "01a12fca-d536-7ad0-9a68-49d4dc9bf739",
+      "toolCallCount": 23,
+      "finalText": "2 lines, $263.00",
+      "elapsedMs": 94883,
+      "oraclePassed": true,
+      "finalAnswerPassed": false,
+      "failureCategory": "final-answer-mismatch",
+      "error": "Task oracle failed: 2 lines, $263.00",
+      "resultPaths": {
+        "attemptDir": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-03-34.142Z-c10cd773/visual",
+        "manifestPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-03-34.142Z-c10cd773/visual/manifest.json",
+        "summaryPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-03-34.142Z-c10cd773/visual/summary.json",
+        "eventsPath": "/Users/shmakovdima/doka/webmcp-browser-benchmark/results/codex-tokens/2026-10-12T11-03-34.142Z-c10cd773/visual/events.jsonl"
+      },
+      "batch": "2026-10-12T11-03-34.142Z-c10cd773"
+    }
+  ],
+  "totals": {
+    "webmcp": {
+      "mode": "webmcp",
+      "tasks": 5,
+      "input": 482512,
+      "cached": 378368,
+      "output": 2381,
+      "reasoning": 435,
+      "total": 484893,
+      "ms": 134544,
+      "calls": 25
+    },
+    "visual": {
+      "mode": "visual",
+      "tasks": 5,
+      "input": 1058026,
+      "cached": 945152,
+      "output": 3681,
+      "reasoning": 834,
+      "total": 1061707,
+      "ms": 411198,
+      "calls": 67
+    },
+    "playwright-mcp": {
+      "mode": "playwright-mcp",
+      "tasks": 5,
+      "input": 1431724,
+      "cached": 1298176,
+      "output": 4941,
+      "reasoning": 1142,
+      "total": 1436665,
+      "ms": 521306,
+      "calls": 72
+    }
+  }
+}

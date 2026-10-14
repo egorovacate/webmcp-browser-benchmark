@@ -1,0 +1,233 @@
+{
+  "title": "self-run T1 2026-10-14T10-19 (no model calls)",
+  "method": "scripted flows, exact runtimes/handlers, fresh store, oracle-checked, o200k_base. Input = schemas + observations. Total = input + answer. Output column = tokenized scripted answer text (no model generation); reasoning n/a.",
+  "rows": [
+    {
+      "model": "selfrun",
+      "test": "T1",
+      "interface": "webmcp",
+      "total": 700,
+      "input": 691,
+      "output": 9,
+      "reasoning": "n/a",
+      "calls": 1,
+      "timeMs": 17
+    },
+    {
+      "model": "selfrun",
+      "test": "T1",
+      "interface": "playwright-mcp",
+      "total": 5315,
+      "input": 5306,
+      "output": 9,
+      "reasoning": "n/a",
+      "calls": 7,
+      "timeMs": 4569
+    },
+    {
+      "model": "selfrun",
+      "test": "T1",
+      "interface": "playwright-cli",
+      "total": 5099,
+      "input": 5090,
+      "output": 9,
+      "reasoning": "n/a",
+      "calls": 7,
+      "timeMs": 10383
+    },
+    {
+      "model": "selfrun",
+      "test": "T1",
+      "interface": "dom",
+      "total": 9040,
+      "input": 9031,
+      "output": 9,
+      "reasoning": "n/a",
+      "calls": 6,
+      "timeMs": 4340
+    },
+    {
+      "model": "selfrun",
+      "test": "T2",
+      "interface": "webmcp",
+      "total": 812,
+      "input": 803,
+      "output": 9,
+      "reasoning": "n/a",
+      "calls": 3,
+      "timeMs": 15
+    },
+    {
+      "model": "selfrun",
+      "test": "T2",
+      "interface": "playwright-mcp",
+      "total": 5424,
+      "input": 5415,
+      "output": 9,
+      "reasoning": "n/a",
+      "calls": 12,
+      "timeMs": 5107
+    },
+    {
+      "model": "selfrun",
+      "test": "T2",
+      "interface": "playwright-cli",
+      "total": 6307,
+      "input": 6298,
+      "output": 9,
+      "reasoning": "n/a",
+      "calls": 12,
+      "timeMs": 25047
+    },
+    {
+      "model": "selfrun",
+      "test": "T2",
+      "interface": "dom",
+      "total": 9242,
+      "input": 9233,
+      "output": 9,
+      "reasoning": "n/a",
+      "calls": 11,
+      "timeMs": 5448
+    },
+    {
+      "model": "selfrun",
+      "test": "T3",
+      "interface": "webmcp",
+      "total": 858,
+      "input": 849,
+      "output": 9,
+      "reasoning": "n/a",
+      "calls": 3,
+      "timeMs": 3
+    },
+    {
+      "model": "selfrun",
+      "test": "T3",
+      "interface": "playwright-mcp",
+      "total": 4282,
+      "input": 4273,
+      "output": 9,
+      "reasoning": "n/a",
+      "calls": 20,
+      "timeMs": 7145
+    },
+    {
+      "model": "selfrun",
+      "test": "T3",
+      "interface": "playwright-cli",
+      "calls": 22,
+      "total": 8704,
+      "input": 8695,
+      "output": 9,
+      "reasoning": "n/a",
+      "timeMs": 38957
+    },
+    {
+      "model": "selfrun",
+      "test": "T3",
+      "interface": "dom",
+      "total": 9328,
+      "input": 9319,
+      "output": 9,
+      "reasoning": "n/a",
+      "calls": 19,
+      "timeMs": 6011
+    },
+    {
+      "model": "selfrun",
+      "test": "T4",
+      "interface": "webmcp",
+      "total": 701,
+      "input": 691,
+      "output": 10,
+      "reasoning": "n/a",
+      "calls": 1,
+      "timeMs": 1
+    },
+    {
+      "model": "selfrun",
+      "test": "T4",
+      "interface": "playwright-mcp",
+      "total": 5550,
+      "input": 5540,
+      "output": 10,
+      "reasoning": "n/a",
+      "calls": 12,
+      "timeMs": 5449
+    },
+    {
+      "model": "selfrun",
+      "test": "T4",
+      "interface": "playwright-cli",
+      "total": 5352,
+      "input": 5342,
+      "output": 10,
+      "reasoning": "n/a",
+      "calls": 8,
+      "timeMs": 13933
+    },
+    {
+      "model": "selfrun",
+      "test": "T4",
+      "interface": "dom",
+      "total": 9560,
+      "input": 9550,
+      "output": 10,
+      "reasoning": "n/a",
+      "calls": 11,
+      "timeMs": 5090
+    },
+    {
+      "model": "selfrun",
+      "test": "T5",
+      "interface": "webmcp",
+      "total": 1552,
+      "input": 1541,
+      "output": 11,
+      "reasoning": "n/a",
+      "calls": 7,
+      "timeMs": 4
+    },
+    {
+      "model": "selfrun",
+      "test": "T5",
+      "interface": "playwright-mcp",
+      "total": 6701,
+      "input": 6690,
+      "output": 11,
+      "reasoning": "n/a",
+      "calls": 30,
+      "timeMs": 10228
+    },
+    {
+      "model": "selfrun",
+      "test": "T5",
+      "interface": "playwright-cli",
+      "total": 16026,
+      "input": 16015,
+      "output": 11,
+      "reasoning": "n/a",
+      "calls": 34,
+      "timeMs": 102018
+    },
+    {
+      "model": "selfrun",
+      "test": "T5",
+      "interface": "dom",
+      "total": 11160,
+      "input": 11149,
+      "output": 11,
+      "reasoning": "n/a",
+      "calls": 29,
+      "timeMs": 9671
+    }
+  ],
+  "totals": {
+    "total": 121713,
+    "input": 121521,
+    "output": 192,
+    "calls": 255,
+    "ms": 253436
+  }
+}

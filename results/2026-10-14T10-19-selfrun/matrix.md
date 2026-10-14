@@ -1,0 +1,27 @@
+# Self-run 2026-10-14T10-19 (no model calls)
+
+Output = scripted answer text, no model generation; reasoning n/a. Row order within a test: webmcp, playwright-mcp, playwright-cli, dom.
+
+| Model | Test | Interface | Total | Input | Output | Reasoning | Calls | Time |
+|---|---|---|---:|---:|---:|---:|---:|---:|
+| selfrun | T1 | webmcp | 700 | 691 | 9 | n/a | 1 | 17ms |
+| selfrun | T1 | playwright-mcp | 5315 | 5306 | 9 | n/a | 7 | 4569ms |
+| selfrun | T1 | playwright-cli | 5099 | 5090 | 9 | n/a | 7 | 10383ms |
+| selfrun | T1 | dom | 9040 | 9031 | 9 | n/a | 6 | 4340ms |
+| selfrun | T2 | webmcp | 812 | 803 | 9 | n/a | 3 | 15ms |
+| selfrun | T2 | playwright-mcp | 5424 | 5415 | 9 | n/a | 12 | 5107ms |
+| selfrun | T2 | playwright-cli | 6307 | 6298 | 9 | n/a | 12 | 25047ms |
+| selfrun | T2 | dom | 9242 | 9233 | 9 | n/a | 11 | 5448ms |
+| selfrun | T3 | webmcp | 858 | 849 | 9 | n/a | 3 | 3ms |
+| selfrun | T3 | playwright-mcp | 4282 | 4273 | 9 | n/a | 20 | 7145ms |
+| selfrun | T3 | playwright-cli | 8704 | 8695 | 9 | n/a | 22 | 38957ms |
+| selfrun | T3 | dom | 9328 | 9319 | 9 | n/a | 19 | 6011ms |
+| selfrun | T4 | webmcp | 701 | 691 | 10 | n/a | 1 | 1ms |
+| selfrun | T4 | playwright-mcp | 5550 | 5540 | 10 | n/a | 12 | 5449ms |
+| selfrun | T4 | playwright-cli | 5352 | 5342 | 10 | n/a | 8 | 13933ms |
+| selfrun | T4 | dom | 9560 | 9550 | 10 | n/a | 11 | 5090ms |
+| selfrun | T5 | webmcp | 1552 | 1541 | 11 | n/a | 7 | 4ms |
+| selfrun | T5 | playwright-mcp | 6701 | 6690 | 11 | n/a | 30 | 10228ms |
+| selfrun | T5 | playwright-cli | 16026 | 16015 | 11 | n/a | 34 | 102018ms |
+| selfrun | T5 | dom | 11160 | 11149 | 11 | n/a | 29 | 9671ms |
+| selfrun | T1-T5 | **sum** | **121713** | **121521** | **192** | n/a | **255** | **253436ms** |
