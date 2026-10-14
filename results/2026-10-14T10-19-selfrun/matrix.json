@@ -159,6 +159,17 @@
     {
       "model": "selfrun",
       "test": "T4",
+      "interface": "playwright-cli",
+      "total": 5352,
+      "input": 5342,
+      "output": 10,
+      "reasoning": "n/a",
+      "calls": 8,
+      "timeMs": 13933
+    },
+    {
+      "model": "selfrun",
+      "test": "T4",
       "interface": "dom",
       "total": 9560,
       "input": 9550,
@@ -202,10 +213,10 @@
     }
   ],
   "totals": {
-    "total": 100335,
-    "input": 100164,
-    "output": 171,
-    "calls": 213,
-    "ms": 137485
+    "total": 105687,
+    "input": 105506,
+    "output": 181,
+    "calls": 221,
+    "ms": 151418
   }
 }
