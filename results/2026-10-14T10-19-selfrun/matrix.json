@@ -60,6 +60,17 @@
     {
       "model": "selfrun",
       "test": "T2",
+      "interface": "playwright-cli",
+      "total": 6307,
+      "input": 6298,
+      "output": 9,
+      "reasoning": "n/a",
+      "calls": 12,
+      "timeMs": 25047
+    },
+    {
+      "model": "selfrun",
+      "test": "T2",
       "interface": "dom",
       "total": 9242,
       "input": 9233,
@@ -78,6 +89,17 @@
       "reasoning": "n/a",
       "calls": 3,
       "timeMs": 3
+    },
+    {
+      "model": "selfrun",
+      "test": "T3",
+      "interface": "playwright-cli",
+      "calls": 22,
+      "total": 8704,
+      "input": 8695,
+      "output": 9,
+      "reasoning": "n/a",
+      "timeMs": 38957
     },
     {
       "model": "selfrun",
@@ -136,10 +158,10 @@
     }
   ],
   "totals": {
-    "total": 63367,
-    "input": 63253,
-    "output": 114,
-    "calls": 105,
-    "ms": 45552
+    "total": 78378,
+    "input": 78246,
+    "output": 132,
+    "calls": 139,
+    "ms": 109556
   }
 }
