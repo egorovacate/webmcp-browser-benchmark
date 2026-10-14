@@ -17,7 +17,10 @@ Output = scripted answer text, no model generation; reasoning n/a. Row order wit
 | selfrun | T3 | playwright-cli | 8704 | 8695 | 9 | n/a | 22 | 38957ms |
 | selfrun | T3 | dom | 9328 | 9319 | 9 | n/a | 19 | 6011ms |
 | selfrun | T4 | webmcp | 701 | 691 | 10 | n/a | 1 | 1ms |
+| selfrun | T4 | playwright-mcp | 5550 | 5540 | 10 | n/a | 12 | 5449ms |
 | selfrun | T4 | dom | 9560 | 9550 | 10 | n/a | 11 | 5090ms |
 | selfrun | T5 | webmcp | 1552 | 1541 | 11 | n/a | 7 | 4ms |
 | selfrun | T5 | dom | 11160 | 11149 | 11 | n/a | 29 | 9671ms |
-| selfrun | T1-T5 | **sum** | **88084** | **87934** | **150** | n/a | **171** | **121808ms** |
+| selfrun | T1-T5 | **sum** | **93634** | **$93474** | **160** | n/a | **183** | **127257ms** |
+
+| selfrun | T1-T5 | **sum** | **93634** | **93474** | **160** | n/a | **183** | **127257ms** |

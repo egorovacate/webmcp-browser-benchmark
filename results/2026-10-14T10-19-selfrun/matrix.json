@@ -148,6 +148,17 @@
     {
       "model": "selfrun",
       "test": "T4",
+      "interface": "playwright-mcp",
+      "total": 5550,
+      "input": 5540,
+      "output": 10,
+      "reasoning": "n/a",
+      "calls": 12,
+      "timeMs": 5449
+    },
+    {
+      "model": "selfrun",
+      "test": "T4",
       "interface": "dom",
       "total": 9560,
       "input": 9550,
@@ -180,10 +191,10 @@
     }
   ],
   "totals": {
-    "total": 88084,
-    "input": 87934,
-    "output": 150,
-    "calls": 171,
-    "ms": 121808
+    "total": 93634,
+    "input": 93474,
+    "output": 160,
+    "calls": 183,
+    "ms": 127257
   }
 }
