@@ -217,6 +217,21 @@ The totals table contains exactly three rows:
 
 For every mode, `Completed tasks` must equal 5. The grand total is the sum of the three mode totals.
 
+## 12b. Reference appendix: self-run T1 (2026-10-12, no model calls)
+
+Scripted flows through the exact runtimes/handlers, oracle-checked, tokenized with `o200k_base`. Input = tool schemas + observation payloads; no model output or reasoning exists in a self-run. Machine time only. Raw data: `results/self-run-T1-2026-10-12-gpt-5-6-terra/`.
+
+Grand total: **20 154 tokens** (21 tool calls, 19 304 ms).
+
+| Interface | Tool calls | Token total | Time total |
+|---|---:|---:|---:|
+| webmcp | 1 | 700 | 14 ms |
+| playwright-cli | 7 | 5 099 | 10 685 ms |
+| playwright-mcp | 7 | 5 315 | 4 607 ms |
+| visual | 6 | 9 040 | 3 998 ms |
+
+This appendix is a structural reference only. It is not provider-measured data and must never be presented as benchmark results under the publication gate below.
+
 ## 13. Publication gate
 
 Before reporting numbers, the result validator must prove:
