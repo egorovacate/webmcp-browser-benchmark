@@ -278,6 +278,10 @@ Before reporting numbers, the result validator must prove:
 - token subset and total equations are correct;
 - no forbidden capability appears in any trace;
 - no proxy, direct runner, baseline, or hand-edited result was used.
+- every reported table uses exactly the §12d columns in order (Model, Test, Interface, Total, Input, Output, Reasoning, Calls, Time) with per-interface totals;
+- every result folder is named `<UTC-timestamp>-<model>`.
+
+Format violation is a reset: a table with wrong columns, missing totals, or a misnamed folder is rejected outright and counts as no delivery.
 
 If any check fails, the only valid status is `benchmark incomplete`. No token comparison is reported as final.
 
