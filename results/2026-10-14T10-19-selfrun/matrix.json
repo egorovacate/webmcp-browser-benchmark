@@ -1,6 +1,6 @@
 {
   "title": "self-run T1 2026-10-14T10-19 (no model calls)",
-  "method": "scripted flows, exact runtimes/handlers, fresh store, oracle-checked, o200k_base. Input = schemas + observations. Total = input + answer.",
+  "method": "scripted flows, exact runtimes/handlers, fresh store, oracle-checked, o200k_base. Input = schemas + observations. Total = input + answer. Output column = tokenized scripted answer text (no model generation); reasoning n/a.",
   "rows": [
     {
       "model": "selfrun",
@@ -8,7 +8,7 @@
       "interface": "webmcp",
       "total": 700,
       "input": 691,
-      "output": "n/a",
+      "output": 9,
       "reasoning": "n/a",
       "calls": 1,
       "timeMs": 17
@@ -19,7 +19,7 @@
       "interface": "playwright-cli",
       "total": 5099,
       "input": 5090,
-      "output": "n/a",
+      "output": 9,
       "reasoning": "n/a",
       "calls": 7,
       "timeMs": 10383
@@ -30,7 +30,7 @@
       "interface": "playwright-mcp",
       "total": 5315,
       "input": 5306,
-      "output": "n/a",
+      "output": 9,
       "reasoning": "n/a",
       "calls": 7,
       "timeMs": 4569
@@ -41,7 +41,7 @@
       "interface": "visual",
       "total": 9040,
       "input": 9031,
-      "output": "n/a",
+      "output": 9,
       "reasoning": "n/a",
       "calls": 6,
       "timeMs": 4340
@@ -51,6 +51,7 @@
     "total": 20154,
     "input": 20118,
     "calls": 21,
-    "ms": 19309
+    "ms": 19309,
+    "output": 36
   }
 }
