@@ -78,6 +78,7 @@ export function buildScoredPrompt(_mode, targetUrl, taskPrompt) {
     `The isolated benchmark page is at ${targetUrl}.`,
     'Open only this URL in a new tab. When a browser name is required, use chrome. Do not inspect existing tabs.',
     'Use only the supplied browser tools. Do not use shell, files, source code, backend APIs, screenshots, or external network resources.',
+    'Complete the task in as few tool calls as possible. Do not re-read the page when you already have what the next action needs. Prefer narrow, scoped observations over full-page reads.',
     taskPrompt,
     'Return only the concise answer requested by the task after completing the browser work.',
   ].join('\n');

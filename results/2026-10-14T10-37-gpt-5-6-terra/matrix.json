@@ -1,0 +1,49 @@
+{
+  "prompt": "efficiency-wrapper-v1",
+  "rows": [
+    {
+      "model": "gpt-5.6-terra",
+      "test": "T1",
+      "interface": "webmcp",
+      "total": 60713,
+      "input": 60323,
+      "output": 390,
+      "reasoning": 141,
+      "calls": 3,
+      "timeMs": 27376,
+      "batch": "2026-10-14T10-37-02.361Z-98577ea7"
+    },
+    {
+      "model": "gpt-5.6-terra",
+      "test": "T1",
+      "interface": "playwright-mcp",
+      "total": 74549,
+      "input": 74184,
+      "output": 365,
+      "reasoning": 104,
+      "calls": 3,
+      "timeMs": 21691,
+      "batch": "2026-10-14T10-37-02.361Z-98577ea7"
+    },
+    {
+      "model": "gpt-5.6-terra",
+      "test": "T1",
+      "interface": "dom",
+      "total": 71803,
+      "input": 71409,
+      "output": 394,
+      "reasoning": 114,
+      "calls": 6,
+      "timeMs": 32983,
+      "batch": "2026-10-14T10-37-02.361Z-98577ea7"
+    }
+  ],
+  "totals": {
+    "total": 207065,
+    "input": 205916,
+    "output": 1149,
+    "reasoning": 359,
+    "calls": 12,
+    "ms": 82050
+  }
+}
