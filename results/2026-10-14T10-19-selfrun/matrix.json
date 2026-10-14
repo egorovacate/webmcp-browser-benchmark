@@ -3,64 +3,54 @@
   "method": "scripted flows, exact runtimes/handlers, fresh store, oracle-checked, o200k_base. Input = schemas + observations. Total = input + answer.",
   "rows": [
     {
-      "task": "T1",
+      "model": "selfrun",
+      "test": "T1",
       "interface": "webmcp",
+      "total": 700,
+      "input": 691,
+      "output": "n/a",
+      "reasoning": "n/a",
       "calls": 1,
-      "inputSchemas": 427,
-      "inputObs": 264,
-      "inputTokens": 691,
-      "answerTokens": 9,
-      "totalTokens": 700,
-      "flowMs": 17,
-      "oraclePassed": true,
-      "finalAnswerPassed": true
+      "timeMs": 17
     },
     {
-      "task": "T1",
+      "model": "selfrun",
+      "test": "T1",
       "interface": "playwright-cli",
+      "total": 5099,
+      "input": 5090,
+      "output": "n/a",
+      "reasoning": "n/a",
       "calls": 7,
-      "inputSchemas": 302,
-      "inputObs": 4788,
-      "inputTokens": 5090,
-      "answerTokens": 9,
-      "totalTokens": 5099,
-      "flowMs": 10383,
-      "oraclePassed": true,
-      "finalAnswerPassed": true,
-      "note": "prototype /tmp proxy"
+      "timeMs": 10383
     },
     {
-      "task": "T1",
+      "model": "selfrun",
+      "test": "T1",
       "interface": "playwright-mcp",
+      "total": 5315,
+      "input": 5306,
+      "output": "n/a",
+      "reasoning": "n/a",
       "calls": 7,
-      "inputSchemas": 1465,
-      "inputObs": 3841,
-      "inputTokens": 5306,
-      "answerTokens": 9,
-      "totalTokens": 5315,
-      "flowMs": 4569,
-      "oraclePassed": true,
-      "finalAnswerPassed": true
+      "timeMs": 4569
     },
     {
-      "task": "T1",
+      "model": "selfrun",
+      "test": "T1",
       "interface": "visual",
+      "total": 9040,
+      "input": 9031,
+      "output": "n/a",
+      "reasoning": "n/a",
       "calls": 6,
-      "inputSchemas": 361,
-      "inputObs": 8670,
-      "inputTokens": 9031,
-      "answerTokens": 9,
-      "totalTokens": 9040,
-      "flowMs": 4340,
-      "oraclePassed": true,
-      "finalAnswerPassed": true
+      "timeMs": 4340
     }
   ],
   "totals": {
+    "total": 20154,
+    "input": 20118,
     "calls": 21,
-    "inputTokens": 20118,
-    "answerTokens": 36,
-    "totalTokens": 20154,
-    "flowMs": 25309
+    "ms": 19309
   }
 }
