@@ -244,6 +244,28 @@ Grand total: **3 094 232 tokens** (163 tool calls, 1 050.3 s).
 | visual (DOM) | 67 | 1 061 707 | 411.2 s |
 | playwright-mcp | 71 | 1 547 632 | 504.6 s |
 
+## 12d. Reported table format and result folders
+
+Every reported comparison uses exactly these columns, in this order:
+
+| Model | Test | Interface | Total | Input | Output | Reasoning | Calls | Time |
+| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| `model-id` | `T1` | `webmcp` | 0 | 0 | 0 | 0 | 0 | 0.0 s |
+
+One row per completed (task, interface) cell, then one totals row per interface with `Test` = `T1-T5`. No other columns, no renamed headers.
+
+Assembled result folders are named `<UTC-timestamp>-<model>` (for example, `results/2026-10-12T16-00-gpt-5-6-terra/`).
+
+## 12e. Required results deliverable
+
+A benchmark delivery is complete only when the result folder contains:
+
+1. `matrix.md` — the comparison table in the §12d format: one row per completed (task, interface) cell (15 rows: T1-T5 × webmcp, playwright-mcp, visual), then one totals row per interface (`Test` = `T1-T5`), then the grand total line (token sum, call sum, time sum over all 15 cells).
+2. `matrix.json` — raw per-cell data behind the table (provider-reported usage objects, tool-call counts, elapsed times, thread ids, oracle verdicts, batch references) plus the diagnostics list (every failed attempt with its spend and failure text).
+3. Diagnostics are part of the delivery: failed, timed-out, or contaminated attempts are listed with tokens spent, never relabeled, never deleted.
+
+No delivery without all three items counts as results.
+
 ## 13. Publication gate
 
 Before reporting numbers, the result validator must prove:
