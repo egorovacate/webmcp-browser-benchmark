@@ -21,6 +21,4 @@ Output = scripted answer text, no model generation; reasoning n/a. Row order wit
 | selfrun | T4 | dom | 9560 | 9550 | 10 | n/a | 11 | 5090ms |
 | selfrun | T5 | webmcp | 1552 | 1541 | 11 | n/a | 7 | 4ms |
 | selfrun | T5 | dom | 11160 | 11149 | 11 | n/a | 29 | 9671ms |
-| selfrun | T1-T5 | **sum** | **93634** | **$93474** | **160** | n/a | **183** | **127257ms** |
-
 | selfrun | T1-T5 | **sum** | **93634** | **93474** | **160** | n/a | **183** | **127257ms** |
