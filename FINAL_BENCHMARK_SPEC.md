@@ -22,6 +22,7 @@ The final benchmark contains 15 completed cells: 5 tasks x 3 modes. A partial ma
 - Model: `gpt-5.6-terra`.
 - OpenAI API calls are forbidden.
 - API keys are forbidden.
+- **Authorization: no subscription thread may start without the user's explicit approval in the current turn (keyword `гони`). Past approvals do not carry over. Self-runs (scripted flows, no model calls, no quota spend) are always allowed and never need approval.**
 - Every attempt starts as a new ephemeral Codex thread.
 - A thread must not inherit the current conversation, a previous benchmark thread, repository instructions, user instructions, skills, memories, MCP configuration, or project context.
 - The exact Codex CLI version and requested model ID are stored in the manifest.
