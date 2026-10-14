@@ -16,17 +16,6 @@
     {
       "model": "selfrun",
       "test": "T1",
-      "interface": "playwright-cli",
-      "total": 5099,
-      "input": 5090,
-      "output": 9,
-      "reasoning": "n/a",
-      "calls": 7,
-      "timeMs": 10383
-    },
-    {
-      "model": "selfrun",
-      "test": "T1",
       "interface": "playwright-mcp",
       "total": 5315,
       "input": 5306,
@@ -34,6 +23,17 @@
       "reasoning": "n/a",
       "calls": 7,
       "timeMs": 4569
+    },
+    {
+      "model": "selfrun",
+      "test": "T1",
+      "interface": "playwright-cli",
+      "total": 5099,
+      "input": 5090,
+      "output": 9,
+      "reasoning": "n/a",
+      "calls": 7,
+      "timeMs": 10383
     },
     {
       "model": "selfrun",
@@ -59,39 +59,6 @@
     },
     {
       "model": "selfrun",
-      "test": "T3",
-      "interface": "webmcp",
-      "total": 858,
-      "input": 849,
-      "output": 9,
-      "reasoning": "n/a",
-      "calls": 3,
-      "timeMs": 3
-    },
-    {
-      "model": "selfrun",
-      "test": "T4",
-      "interface": "webmcp",
-      "total": 701,
-      "input": 691,
-      "output": 10,
-      "reasoning": "n/a",
-      "calls": 1,
-      "timeMs": 1
-    },
-    {
-      "model": "selfrun",
-      "test": "T5",
-      "interface": "webmcp",
-      "total": 1552,
-      "input": 1541,
-      "output": 11,
-      "reasoning": "n/a",
-      "calls": 7,
-      "timeMs": 4
-    },
-    {
-      "model": "selfrun",
       "test": "T2",
       "interface": "visual",
       "total": 9242,
@@ -100,6 +67,17 @@
       "reasoning": "n/a",
       "calls": 11,
       "timeMs": 5448
+    },
+    {
+      "model": "selfrun",
+      "test": "T3",
+      "interface": "webmcp",
+      "total": 858,
+      "input": 849,
+      "output": 9,
+      "reasoning": "n/a",
+      "calls": 3,
+      "timeMs": 3
     },
     {
       "model": "selfrun",
@@ -115,6 +93,17 @@
     {
       "model": "selfrun",
       "test": "T4",
+      "interface": "webmcp",
+      "total": 701,
+      "input": 691,
+      "output": 10,
+      "reasoning": "n/a",
+      "calls": 1,
+      "timeMs": 1
+    },
+    {
+      "model": "selfrun",
+      "test": "T4",
       "interface": "visual",
       "total": 9560,
       "input": 9550,
@@ -122,6 +111,17 @@
       "reasoning": "n/a",
       "calls": 11,
       "timeMs": 5090
+    },
+    {
+      "model": "selfrun",
+      "test": "T5",
+      "interface": "webmcp",
+      "total": 1552,
+      "input": 1541,
+      "output": 11,
+      "reasoning": "n/a",
+      "calls": 7,
+      "timeMs": 4
     },
     {
       "model": "selfrun",

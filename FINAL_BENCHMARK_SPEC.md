@@ -253,7 +253,7 @@ Every reported comparison uses exactly these columns, in this order:
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | `model-id` | `T1` | `webmcp` | 0 | 0 | 0 | 0 | 0 | 0.0 s |
 
-One row per completed (task, interface) cell, then one totals row per interface with `Test` = `T1-T5`. No other columns, no renamed headers.
+One row per completed (task, interface) cell, then one totals row per interface with `Test` = `T1-T5`. No other columns, no renamed headers. Row order within one test: `webmcp`, then `playwright-mcp`, then `playwright-cli` (when present), then `visual`.
 
 Assembled result folders are named `<UTC-timestamp>-<model>` (for example, `results/2026-10-12T16-00-gpt-5-6-terra/`).
 
