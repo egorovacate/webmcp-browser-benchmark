@@ -13,10 +13,11 @@ Output = scripted answer text, no model generation; reasoning n/a. Row order wit
 | selfrun | T2 | playwright-cli | 6307 | 6298 | 9 | n/a | 12 | 25047ms |
 | selfrun | T2 | dom | 9242 | 9233 | 9 | n/a | 11 | 5448ms |
 | selfrun | T3 | webmcp | 858 | 849 | 9 | n/a | 3 | 3ms |
+| selfrun | T3 | playwright-mcp | 4282 | 4273 | 9 | n/a | 20 | 7145ms |
 | selfrun | T3 | playwright-cli | 8704 | 8695 | 9 | n/a | 22 | 38957ms |
 | selfrun | T3 | dom | 9328 | 9319 | 9 | n/a | 19 | 6011ms |
 | selfrun | T4 | webmcp | 701 | 691 | 10 | n/a | 1 | 1ms |
 | selfrun | T4 | dom | 9560 | 9550 | 10 | n/a | 11 | 5090ms |
 | selfrun | T5 | webmcp | 1552 | 1541 | 11 | n/a | 7 | 4ms |
 | selfrun | T5 | dom | 11160 | 11149 | 11 | n/a | 29 | 9671ms |
-| selfrun | T1-T5 | **sum** | **83802** | **83661** | **141** | n/a | **151** | **114663ms** |
+| selfrun | T1-T5 | **sum** | **88084** | **87934** | **150** | n/a | **171** | **121808ms** |
