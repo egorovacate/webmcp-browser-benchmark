@@ -232,6 +232,18 @@ Grand total: **20 154 tokens** (21 tool calls, 19 304 ms).
 
 This appendix is a structural reference only. It is not provider-measured data and must never be presented as benchmark results under the publication gate below.
 
+## 12c. Reported totals: subscription T1–T5 v2 (2026-10-12, gpt-5.6-terra)
+
+Source: `results/codex-tokens/full-T1T5-v2/matrix.md` (15/15 completed cells, raw provider usage).
+
+Grand total: **3 094 232 tokens** (163 tool calls, 1 050.3 s).
+
+| Mode | Tool calls | Token total | Time total |
+|---|---:|---:|---:|
+| webmcp | 25 | 484 893 | 134.5 s |
+| visual (DOM) | 67 | 1 061 707 | 411.2 s |
+| playwright-mcp | 71 | 1 547 632 | 504.6 s |
+
 ## 13. Publication gate
 
 Before reporting numbers, the result validator must prove:
