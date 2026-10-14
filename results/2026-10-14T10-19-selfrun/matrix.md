@@ -20,5 +20,6 @@ Output = scripted answer text, no model generation; reasoning n/a. Row order wit
 | selfrun | T4 | playwright-mcp | 5550 | 5540 | 10 | n/a | 12 | 5449ms |
 | selfrun | T4 | dom | 9560 | 9550 | 10 | n/a | 11 | 5090ms |
 | selfrun | T5 | webmcp | 1552 | 1541 | 11 | n/a | 7 | 4ms |
+| selfrun | T5 | playwright-mcp | 6701 | 6690 | 11 | n/a | 30 | 10228ms |
 | selfrun | T5 | dom | 11160 | 11149 | 11 | n/a | 29 | 9671ms |
-| selfrun | T1-T5 | **sum** | **93634** | **93474** | **160** | n/a | **183** | **127257ms** |
+| selfrun | T1-T5 | **sum** | **100335** | **100164** | **171** | n/a | **213** | **137485ms** |
