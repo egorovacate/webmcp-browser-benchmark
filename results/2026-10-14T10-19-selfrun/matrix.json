@@ -38,7 +38,7 @@
     {
       "model": "selfrun",
       "test": "T1",
-      "interface": "visual",
+      "interface": "dom",
       "total": 9040,
       "input": 9031,
       "output": 9,
@@ -60,7 +60,7 @@
     {
       "model": "selfrun",
       "test": "T2",
-      "interface": "visual",
+      "interface": "dom",
       "total": 9242,
       "input": 9233,
       "output": 9,
@@ -82,7 +82,7 @@
     {
       "model": "selfrun",
       "test": "T3",
-      "interface": "visual",
+      "interface": "dom",
       "total": 9328,
       "input": 9319,
       "output": 9,
@@ -104,7 +104,7 @@
     {
       "model": "selfrun",
       "test": "T4",
-      "interface": "visual",
+      "interface": "dom",
       "total": 9560,
       "input": 9550,
       "output": 10,
@@ -126,7 +126,7 @@
     {
       "model": "selfrun",
       "test": "T5",
-      "interface": "visual",
+      "interface": "dom",
       "total": 11160,
       "input": 11149,
       "output": 11,
