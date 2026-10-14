@@ -12,7 +12,8 @@
       "answerTokens": 9,
       "flowMs": 14,
       "oraclePassed": true,
-      "finalAnswerPassed": true
+      "finalAnswerPassed": true,
+      "totalTokens": 700
     },
     {
       "task": "T1",
@@ -25,7 +26,8 @@
       "flowMs": 10685,
       "oraclePassed": true,
       "finalAnswerPassed": true,
-      "note": "prototype /tmp proxy"
+      "note": "prototype /tmp proxy",
+      "totalTokens": 5099
     },
     {
       "task": "T1",
@@ -37,7 +39,8 @@
       "answerTokens": 9,
       "flowMs": 4607,
       "oraclePassed": true,
-      "finalAnswerPassed": true
+      "finalAnswerPassed": true,
+      "totalTokens": 5315
     },
     {
       "task": "T1",
@@ -49,7 +52,15 @@
       "answerTokens": 9,
       "flowMs": 3998,
       "oraclePassed": true,
-      "finalAnswerPassed": true
+      "finalAnswerPassed": true,
+      "totalTokens": 9040
     }
-  ]
+  ],
+  "totals": {
+    "calls": 21,
+    "inputTokens": 20118,
+    "answerTokens": 36,
+    "totalTokens": 20154,
+    "flowMs": 19304
+  }
 }
