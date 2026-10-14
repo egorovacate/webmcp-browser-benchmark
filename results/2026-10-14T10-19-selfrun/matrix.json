@@ -45,13 +45,101 @@
       "reasoning": "n/a",
       "calls": 6,
       "timeMs": 4340
+    },
+    {
+      "model": "selfrun",
+      "test": "T2",
+      "interface": "webmcp",
+      "total": 812,
+      "input": 803,
+      "output": 9,
+      "reasoning": "n/a",
+      "calls": 3,
+      "timeMs": 15
+    },
+    {
+      "model": "selfrun",
+      "test": "T3",
+      "interface": "webmcp",
+      "total": 858,
+      "input": 849,
+      "output": 9,
+      "reasoning": "n/a",
+      "calls": 3,
+      "timeMs": 3
+    },
+    {
+      "model": "selfrun",
+      "test": "T4",
+      "interface": "webmcp",
+      "total": 701,
+      "input": 691,
+      "output": 10,
+      "reasoning": "n/a",
+      "calls": 1,
+      "timeMs": 1
+    },
+    {
+      "model": "selfrun",
+      "test": "T5",
+      "interface": "webmcp",
+      "total": 1552,
+      "input": 1541,
+      "output": 11,
+      "reasoning": "n/a",
+      "calls": 7,
+      "timeMs": 4
+    },
+    {
+      "model": "selfrun",
+      "test": "T2",
+      "interface": "visual",
+      "total": 9242,
+      "input": 9233,
+      "output": 9,
+      "reasoning": "n/a",
+      "calls": 11,
+      "timeMs": 5448
+    },
+    {
+      "model": "selfrun",
+      "test": "T3",
+      "interface": "visual",
+      "total": 9328,
+      "input": 9319,
+      "output": 9,
+      "reasoning": "n/a",
+      "calls": 19,
+      "timeMs": 6011
+    },
+    {
+      "model": "selfrun",
+      "test": "T4",
+      "interface": "visual",
+      "total": 9560,
+      "input": 9550,
+      "output": 10,
+      "reasoning": "n/a",
+      "calls": 11,
+      "timeMs": 5090
+    },
+    {
+      "model": "selfrun",
+      "test": "T5",
+      "interface": "visual",
+      "total": 11160,
+      "input": 11149,
+      "output": 11,
+      "reasoning": "n/a",
+      "calls": 29,
+      "timeMs": 9671
     }
   ],
   "totals": {
-    "total": 20154,
-    "input": 20118,
-    "calls": 21,
-    "ms": 19309,
-    "output": 36
+    "total": 63367,
+    "input": 63253,
+    "output": 114,
+    "calls": 105,
+    "ms": 45552
   }
 }
