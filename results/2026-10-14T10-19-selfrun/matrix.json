@@ -1,9 +1,9 @@
 {
-  "title": "self-run T1 2026-10-14T10-19 (no model calls)",
+  "title": "Self-run T1-T5 FINAL by muse 2026-10-14 (no provider calls)",
   "method": "scripted flows, exact runtimes/handlers, fresh store, oracle-checked, o200k_base. Input = schemas + observations. Total = input + answer. Output column = tokenized scripted answer text (no model generation); reasoning n/a.",
   "rows": [
     {
-      "model": "selfrun",
+      "model": "muse",
       "test": "T1",
       "interface": "webmcp",
       "total": 700,
@@ -14,7 +14,7 @@
       "timeMs": 17
     },
     {
-      "model": "selfrun",
+      "model": "muse",
       "test": "T1",
       "interface": "playwright-mcp",
       "total": 5315,
@@ -25,7 +25,7 @@
       "timeMs": 4569
     },
     {
-      "model": "selfrun",
+      "model": "muse",
       "test": "T1",
       "interface": "playwright-cli",
       "total": 5099,
@@ -36,7 +36,7 @@
       "timeMs": 10383
     },
     {
-      "model": "selfrun",
+      "model": "muse",
       "test": "T1",
       "interface": "dom",
       "total": 9040,
@@ -47,7 +47,7 @@
       "timeMs": 4340
     },
     {
-      "model": "selfrun",
+      "model": "muse",
       "test": "T2",
       "interface": "webmcp",
       "total": 812,
@@ -58,7 +58,7 @@
       "timeMs": 15
     },
     {
-      "model": "selfrun",
+      "model": "muse",
       "test": "T2",
       "interface": "playwright-mcp",
       "total": 5424,
@@ -69,7 +69,7 @@
       "timeMs": 5107
     },
     {
-      "model": "selfrun",
+      "model": "muse",
       "test": "T2",
       "interface": "playwright-cli",
       "total": 6307,
@@ -80,7 +80,7 @@
       "timeMs": 25047
     },
     {
-      "model": "selfrun",
+      "model": "muse",
       "test": "T2",
       "interface": "dom",
       "total": 9242,
@@ -91,7 +91,7 @@
       "timeMs": 5448
     },
     {
-      "model": "selfrun",
+      "model": "muse",
       "test": "T3",
       "interface": "webmcp",
       "total": 858,
@@ -102,7 +102,7 @@
       "timeMs": 3
     },
     {
-      "model": "selfrun",
+      "model": "muse",
       "test": "T3",
       "interface": "playwright-mcp",
       "total": 4282,
@@ -113,7 +113,7 @@
       "timeMs": 7145
     },
     {
-      "model": "selfrun",
+      "model": "muse",
       "test": "T3",
       "interface": "playwright-cli",
       "calls": 22,
@@ -124,7 +124,7 @@
       "timeMs": 38957
     },
     {
-      "model": "selfrun",
+      "model": "muse",
       "test": "T3",
       "interface": "dom",
       "total": 9328,
@@ -135,7 +135,7 @@
       "timeMs": 6011
     },
     {
-      "model": "selfrun",
+      "model": "muse",
       "test": "T4",
       "interface": "webmcp",
       "total": 701,
@@ -146,7 +146,7 @@
       "timeMs": 1
     },
     {
-      "model": "selfrun",
+      "model": "muse",
       "test": "T4",
       "interface": "playwright-mcp",
       "total": 5550,
@@ -157,7 +157,7 @@
       "timeMs": 5449
     },
     {
-      "model": "selfrun",
+      "model": "muse",
       "test": "T4",
       "interface": "playwright-cli",
       "total": 9898,
@@ -168,7 +168,7 @@
       "timeMs": 44182
     },
     {
-      "model": "selfrun",
+      "model": "muse",
       "test": "T4",
       "interface": "dom",
       "total": 9560,
@@ -179,7 +179,7 @@
       "timeMs": 5090
     },
     {
-      "model": "selfrun",
+      "model": "muse",
       "test": "T5",
       "interface": "webmcp",
       "total": 1552,
@@ -190,7 +190,7 @@
       "timeMs": 4
     },
     {
-      "model": "selfrun",
+      "model": "muse",
       "test": "T5",
       "interface": "playwright-mcp",
       "total": 6701,
@@ -201,7 +201,7 @@
       "timeMs": 10228
     },
     {
-      "model": "selfrun",
+      "model": "muse",
       "test": "T5",
       "interface": "playwright-cli",
       "total": 16026,
@@ -212,7 +212,7 @@
       "timeMs": 102018
     },
     {
-      "model": "selfrun",
+      "model": "muse",
       "test": "T5",
       "interface": "dom",
       "total": 11160,
