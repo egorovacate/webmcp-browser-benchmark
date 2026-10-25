@@ -1,8 +1,6 @@
 # Codex selected results with WebMCP less than Playwright MCP less than DOM
 
-Historical selection for `gpt-5.6-terra`. Each T1-T5 triplet passed both recorded oracles and has strict raw-total order `webmcp < playwright-mcp < dom`. The combined machine-readable matrix is [matrix.json](matrix.json).
-
-The rows are recovered from local Codex session history because their original untracked raw directories were deleted. No value is estimated or invented. Supporting matrices: [T1](../codex-tokens/2026-10-15T15-46-13.324Z-863e9b64/matrix.md), [T2](../codex-tokens/full-T1T5-v2/matrix.md), [T3](../codex-tokens/2026-10-24T19-50-28.135Z-67a22329/matrix.md), [T4](../codex-tokens/2026-10-16T00-15-53.159Z-1ee56a8f/matrix.md), [T5](../codex-tokens/2026-10-24T20-02-50.412Z-7e88e2d5/matrix.md).
+Historical selection for `gpt-5.6-terra`. Every T1-T5 row passed both recorded oracles and has strict raw-total order `webmcp < playwright-mcp < dom`. The combined matrix is [codex-run/matrix.md](../codex-run/matrix.md) and [codex-run/matrix.json](../codex-run/matrix.json).
 
 | Model | Test | Interface | Total | Input | Output | Reasoning | Calls | Time |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
