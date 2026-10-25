@@ -1,0 +1,77 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - link "Northstar Store home" [ref=e4] [cursor=pointer]:
+      - /url: "#catalog"
+      - generic [ref=e5]: "N"
+      - heading "Northstar Store" [level=2] [ref=e6]
+    - navigation "Primary navigation" [ref=e7]:
+      - link "Catalog" [ref=e8] [cursor=pointer]:
+        - /url: "#catalog"
+      - link "Cart 1" [ref=e500] [cursor=pointer]:
+        - /url: "#cart"
+        - text: Cart
+        - generic [ref=e10]: "1"
+      - link "Checkout" [ref=e11] [cursor=pointer]:
+        - /url: "#checkout"
+  - main [ref=e12]:
+    - status [ref=e13]: Sonic Lite ANC added to cart.
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - paragraph [ref=e16]: WebMCP Browser Benchmark
+        - heading [level=1] [ref=e17]:
+          - text: Shop the signal,
+          - emphasis [ref=e18]: skip the noise.
+        - paragraph [ref=e19]: A deterministic store built to compare browser automation with an in-page, typed agent interface.
+        - generic [ref=e20]:
+          - link "Browse catalog" [ref=e21] [cursor=pointer]:
+            - /url: "#catalog"
+          - link "Try synthetic checkout →" [ref=e22] [cursor=pointer]:
+            - /url: "#checkout"
+      - complementary "Benchmark information" [ref=e23]:
+        - generic [ref=e24]: Agent-ready store
+        - paragraph [ref=e26]:
+          - text: One shared cart.
+          - strong [ref=e27]: Two ways to operate it.
+        - generic [ref=e28]:
+          - generic [ref=e29]: WebMCP
+          - generic [ref=e30]: Playwright MCP
+        - generic [ref=e31]:
+          - generic [ref=e32]:
+            - strong [ref=e33]: "24"
+            - generic [ref=e34]: products
+          - generic [ref=e35]:
+            - strong [ref=e36]: "5"
+            - generic [ref=e37]: tasks
+          - generic [ref=e38]:
+            - strong [ref=e39]: "0"
+            - generic [ref=e40]: real charges
+    - generic [ref=e41]:
+      - generic [ref=e42]: Shared cart state
+      - generic [ref=e43]: Deterministic fixtures
+      - generic [ref=e44]: Document-level WebMCP
+      - generic [ref=e45]: Zero payment processing
+    - region [ref=e749]:
+      - button "Back to catalog" [ref=e750] [cursor=pointer]
+      - generic [ref=e751]:
+        - generic [ref=e752]:
+          - paragraph [ref=e756]:
+            - text: keyboards
+            - generic [ref=e757]: "4.5"
+          - heading "Slate 75" [level=2] [ref=e760]
+          - paragraph [ref=e761]: Compact mechanical keyboard with hot-swappable switches.
+          - paragraph [ref=e762]: $109.00
+        - generic [ref=e763]:
+          - paragraph [ref=e764]: Choose your finish
+          - generic [ref=e765]:
+            - text: Color
+            - combobox "Color" [ref=e767]:
+              - option "black (6 in stock)" [selected]
+              - option "gray (4 in stock)"
+          - generic [ref=e768]:
+            - text: Quantity
+            - spinbutton "Quantity" [ref=e769]: "1"
+          - button "Add to cart" [ref=e770] [cursor=pointer]
+          - generic [ref=e771]: Secure synthetic checkout. No payment is processed.
+  - contentinfo [ref=e474]:
+    - generic [ref=e475]: Northstar Store
+    - generic [ref=e476]: Built for reproducible agent benchmarks

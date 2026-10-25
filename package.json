@@ -7,7 +7,7 @@
     "node": ">=22"
   },
   "scripts": {
-    "test": "bun test tests/store.test.js tests/reset.test.js tests/tools.test.js tests/oracle.test.js tests/runner.test.js",
+    "test": "bun test tests/store.test.js tests/reset.test.js tests/tools.test.js tests/oracle.test.js tests/runner.test.js tests/agent-loop.test.js tests/providers.test.js tests/result-writer.test.js tests/webmcp-runtime.test.js tests/playwright-mcp-runtime.test.js tests/visual-runtime.test.js tests/experiment.test.js tests/provider-factory.test.js tests/final-benchmark.test.js tests/token-report.test.js tests/native-codex.test.js",
     "test:browser": "bun run build && bun test --timeout 30000 tests/browser.test.js",
     "test:playwright-mcp": "bun test --timeout 30000 tests/playwright-mcp.test.js",
     "test:pages": "bun test tests/pages.test.js",
@@ -17,7 +17,11 @@
     "start": "bun run build && bun src/server/server.js",
     "lint:check": "bun --check src/server/store.js",
     "smoke:dry": "bun src/runner/run.js development --dry-run --mode webmcp --task T1",
-    "smoke:playwright-mcp": "bun scripts/playwright-mcp-smoke.js"
+    "smoke:playwright-mcp": "bun scripts/playwright-mcp-smoke.js",
+    "run:experiment": "bun scripts/run-experiment.js",
+    "run:subscription": "bun run benchmark",
+    "benchmark": "bun run build && bun scripts/run-final-benchmark.js",
+    "test:dom": "bun test --timeout 30000 tests/dom-runtime.browser.test.js"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",
@@ -27,6 +31,7 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.25.2",
     "@playwright/mcp": "0.0.83",
+    "chrome-devtools-mcp": "1.10.1",
     "react": "^19.3.0",
     "react-dom": "^19.3.0"
   }

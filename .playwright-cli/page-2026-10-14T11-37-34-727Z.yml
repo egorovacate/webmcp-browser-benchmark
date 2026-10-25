@@ -1,0 +1,119 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - link "Northstar Store home" [ref=e4] [cursor=pointer]:
+      - /url: "#catalog"
+      - generic [ref=e5]: "N"
+      - heading "Northstar Store" [level=2] [ref=e6]
+    - navigation "Primary navigation" [ref=e7]:
+      - link "Catalog" [ref=e8] [cursor=pointer]:
+        - /url: "#catalog"
+      - link "Cart 0" [ref=e9] [cursor=pointer]:
+        - /url: "#cart"
+        - text: Cart
+        - generic [ref=e10]: "0"
+      - link "Checkout" [ref=e11] [cursor=pointer]:
+        - /url: "#checkout"
+  - main [ref=e12]:
+    - status [ref=e13]: Synthetic store for a browser-agent benchmark. No payment is processed.
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - paragraph [ref=e16]: WebMCP Browser Benchmark
+        - heading [level=1] [ref=e17]:
+          - text: Shop the signal,
+          - emphasis [ref=e18]: skip the noise.
+        - paragraph [ref=e19]: A deterministic store built to compare browser automation with an in-page, typed agent interface.
+        - generic [ref=e20]:
+          - link "Browse catalog" [ref=e21] [cursor=pointer]:
+            - /url: "#catalog"
+          - link "Try synthetic checkout →" [ref=e22] [cursor=pointer]:
+            - /url: "#checkout"
+      - complementary "Benchmark information" [ref=e23]:
+        - generic [ref=e24]: Agent-ready store
+        - paragraph [ref=e26]:
+          - text: One shared cart.
+          - strong [ref=e27]: Two ways to operate it.
+        - generic [ref=e28]:
+          - generic [ref=e29]: WebMCP
+          - generic [ref=e30]: Playwright MCP
+        - generic [ref=e31]:
+          - generic [ref=e32]:
+            - strong [ref=e33]: "24"
+            - generic [ref=e34]: products
+          - generic [ref=e35]:
+            - strong [ref=e36]: "5"
+            - generic [ref=e37]: tasks
+          - generic [ref=e38]:
+            - strong [ref=e39]: "0"
+            - generic [ref=e40]: real charges
+    - generic [ref=e41]:
+      - generic [ref=e42]: Shared cart state
+      - generic [ref=e43]: Deterministic fixtures
+      - generic [ref=e44]: Document-level WebMCP
+      - generic [ref=e45]: Zero payment processing
+    - region [ref=e46]:
+      - region "Catalog filters" [ref=e47]:
+        - generic [ref=e48]:
+          - paragraph [ref=e49]: Curated inventory
+          - heading "Find your next setup." [level=2] [ref=e50]
+          - paragraph [ref=e51]: 3 deterministic products
+        - generic [ref=e52]:
+          - generic [ref=e53]:
+            - text: Search
+            - searchbox "Search" [ref=e54]
+          - generic [ref=e55]:
+            - text: Category
+            - combobox "Category" [ref=e57]:
+              - option "All categories"
+              - option "Headphones" [selected]
+              - option "Keyboards"
+              - option "Mice"
+              - option "Monitors"
+          - generic [ref=e58]:
+            - text: Feature
+            - combobox "Feature" [ref=e60]:
+              - option "All features"
+              - option "Noise cancelling" [selected]
+              - option "Wireless"
+              - option "Mechanical"
+              - option "Gaming"
+          - generic [ref=e61]:
+            - checkbox "In stock only" [checked] [ref=e62]
+            - generic [ref=e63]: In stock only
+          - button "Apply filters" [active] [ref=e64] [cursor=pointer]
+      - generic [ref=e65]:
+        - article [ref=e205]:
+          - generic [ref=e206]: In stock
+          - generic [ref=e211]:
+            - generic [ref=e212]:
+              - generic [ref=e213]: headphones
+              - generic [ref=e214]: "4.4"
+            - heading "Sonic Lite ANC" [level=3] [ref=e217]
+            - paragraph [ref=e218]: Compact wireless headphones with active noise cancellation.
+          - generic [ref=e219]:
+            - generic [ref=e220]: $129.00
+            - button "View Sonic Lite ANC" [ref=e221] [cursor=pointer]
+        - article [ref=e103]:
+          - generic [ref=e104]: In stock
+          - generic [ref=e109]:
+            - generic [ref=e110]:
+              - generic [ref=e111]: headphones
+              - generic [ref=e112]: "4.6"
+            - heading "Quiet Pro 2" [level=3] [ref=e115]
+            - paragraph [ref=e116]: Over-ear wireless headphones for long listening sessions.
+          - generic [ref=e117]:
+            - generic [ref=e118]: $149.00
+            - button "View Quiet Pro 2" [ref=e119] [cursor=pointer]
+        - article [ref=e137]:
+          - generic [ref=e138]: In stock
+          - generic [ref=e143]:
+            - generic [ref=e144]:
+              - generic [ref=e145]: headphones
+              - generic [ref=e146]: "4.5"
+            - heading "Travel Calm" [level=3] [ref=e149]
+            - paragraph [ref=e150]: Foldable headphones with travel-ready noise cancellation.
+          - generic [ref=e151]:
+            - generic [ref=e152]: $179.00
+            - button "View Travel Calm" [ref=e153] [cursor=pointer]
+  - contentinfo [ref=e66]:
+    - generic [ref=e67]: Northstar Store
+    - generic [ref=e68]: Built for reproducible agent benchmarks

@@ -5,8 +5,10 @@ import {
   buildModeMcpConfig,
   buildScoredPrompt,
   collectProviderUsage,
+  createAttemptRunId,
   normalizeProviderUsage,
   parseScoredCodexEvents,
+  parseFinalBenchmarkSelection,
   validateCompletedSummary,
 } from '../src/runner/final-benchmark.js';
 
@@ -15,29 +17,61 @@ test('final benchmark rejects the static GitHub Pages build', () => {
   assert.throws(() => assertDynamicBenchmarkHtml('<html data-static-demo="true">'), /static demo/);
 });
 
-test('final benchmark uses native servers with exact-subset capability filtering only', () => {
+test('final benchmark restores the 14 October native browser contracts', () => {
   const webmcp = buildModeMcpConfig('webmcp', 'http://127.0.0.1:4173');
-  assert.doesNotMatch(JSON.stringify(webmcp), /proxy\.js|run-direct-webmcp|run-subscription-structured/);
-  assert.equal(webmcp.enabledTools.length > 0, true);
+  assert.equal(webmcp.serverName, 'native_webmcp');
+  assert.match(webmcp.cwd, /webmcp-browser-benchmark$/);
   assert.match(webmcp.commandArgs[0], /chrome-devtools-mcp/);
+  assert.deepEqual(webmcp.enabledTools.sort(), ['execute_webmcp_tool', 'list_webmcp_tools', 'new_page']);
   const playwright = buildModeMcpConfig('playwright-mcp', 'http://127.0.0.1:4173');
   assert.doesNotMatch(JSON.stringify(playwright), /run-direct-webmcp|run-subscription-structured|native-webmcp-proxy|visual-mcp-proxy/);
-  assert.equal(playwright.enabledTools.length > 0, true);
+  assert.deepEqual(playwright.enabledTools.sort(), [
+    'browser_click', 'browser_fill_form', 'browser_find', 'browser_navigate', 'browser_press_key', 'browser_select_option', 'browser_snapshot', 'browser_type',
+  ]);
   assert.match(playwright.commandArgs[0], /playwright-mcp-proxy\.js$/);
   assert.equal(playwright.commandArgs[1], 'http://127.0.0.1:4173');
   const config = buildModeMcpConfig('visual', 'http://127.0.0.1:4173');
   assert.equal(config.serverName, 'browser_dom');
+  assert.match(config.cwd, /webmcp-browser-benchmark$/);
   assert.match(config.commandArgs[0], /dom-mcp\.js$/);
   assert.equal(config.commandArgs[1], 'http://127.0.0.1:4173');
+  assert.equal(config.enabledTools.includes('open_page'), true);
   assert.ok(config.enabledTools.includes('dom'));
   assert.ok(config.enabledTools.includes('click'));
 });
 
-test('all modes receive the same scored prompt', () => {
+test('all selection expands to every task in one matrix', () => {
+  assert.deepEqual(parseFinalBenchmarkSelection(['all'], ['T1', 'T2', 'T3', 'T4', 'T5'], ['webmcp', 'playwright-mcp', 'visual']), {
+    taskIds: ['T1', 'T2', 'T3', 'T4', 'T5'],
+    selectedModes: ['webmcp', 'playwright-mcp', 'visual'],
+  });
+});
+
+test('full matrix gives each task and mode a distinct raw artifact directory', () => {
+  assert.equal(createAttemptRunId('T1', 'webmcp'), 'T1-webmcp');
+  assert.equal(createAttemptRunId('T5', 'webmcp'), 'T5-webmcp');
+  assert.notEqual(createAttemptRunId('T1', 'webmcp'), createAttemptRunId('T1', 'visual'));
+});
+
+test('every scored thread receives the documented shared efficiency wrapper', () => {
   const prompt = 'Find the cheapest product.';
   const url = 'http://127.0.0.1:4173';
-  assert.equal(buildScoredPrompt('webmcp', url, prompt), buildScoredPrompt('playwright-mcp', url, prompt));
-  assert.equal(buildScoredPrompt('playwright-mcp', url, prompt), buildScoredPrompt('visual', url, prompt));
+  const expected = [
+    `The isolated benchmark page is at ${url}.`,
+    'Open only this URL in a new tab. When a browser name is required, use chrome. Do not inspect existing tabs.',
+    'Use only the supplied browser tools. Do not use shell, files, source code, backend APIs, screenshots, or external network resources.',
+    'Complete the task in as few tool calls as possible. Do not re-read the page when you already have what the next action needs.',
+    prompt,
+    'Return only the concise answer requested by the task after completing the browser work.',
+  ].join('\n');
+  assert.equal(buildScoredPrompt('webmcp', url, prompt), expected);
+  assert.equal(buildScoredPrompt('playwright-mcp', url, prompt), expected);
+  assert.equal(buildScoredPrompt('visual', url, prompt), expected);
+});
+
+test('shared wrapper does not force narrow observations', () => {
+  const prompt = buildScoredPrompt('playwright-mcp', 'http://127.0.0.1:4173', 'Read the catalog.');
+  assert.doesNotMatch(prompt, /Prefer narrow, scoped observations over full-page reads\./);
 });
 
 test('provider usage keeps subset fields separate from totals', () => {
@@ -140,6 +174,37 @@ test('a tool from another mode cannot validate as the selected browser interface
   assert.throws(() => parseScoredCodexEvents([
     { type: 'item.completed', item: { type: 'mcp_tool_call', server: 'native_playwright', tool: 'browser_snapshot' } },
   ], { serverName: 'cua_repl', enabledTools: ['js'] }), /outside selected mode/);
+});
+
+test('empty Codex resource discovery does not count as a browser capability', () => {
+  const parsed = parseScoredCodexEvents([
+    {
+      type: 'item.started',
+      item: {
+        type: 'mcp_tool_call', server: 'codex', tool: 'list_mcp_resources', status: 'in_progress', result: null,
+      },
+    },
+    {
+      type: 'item.completed',
+      item: {
+        type: 'mcp_tool_call', server: 'codex', tool: 'list_mcp_resources', status: 'completed',
+        result: { content: [{ type: 'text', text: '{"resources":[]}' }] },
+      },
+    },
+    {
+      type: 'item.completed',
+      item: {
+        type: 'mcp_tool_call', server: 'codex', tool: 'list_mcp_resource_templates', status: 'completed',
+        result: { content: [{ type: 'text', text: '{"resourceTemplates":[]}' }] },
+      },
+    },
+    {
+      type: 'item.completed',
+      item: { type: 'mcp_tool_call', server: 'native_webmcp_page_tools', tool: 'search_products', status: 'completed' },
+    },
+    { type: 'turn.completed', usage: { input_tokens: 100, cached_input_tokens: 80, output_tokens: 20 } },
+  ], { serverName: 'native_webmcp_page_tools', enabledTools: ['search_products'] });
+  assert.equal(parsed.toolCallCount, 1);
 });
 
 

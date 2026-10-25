@@ -1,35 +1,32 @@
 import { randomUUID } from 'node:crypto';
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
-import { join, resolve } from 'node:path';
+import { mkdir, mkdtemp, readFile, rename, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { dirname, join, resolve } from 'node:path';
 import { createBenchmarkServer } from '../src/server/server.js';
-import { assertDynamicBenchmarkHtml, buildModeMcpConfig, buildScoredPrompt, collectProviderUsage, finalBenchmarkModes, parseScoredCodexEvents, validateCompletedSummary } from '../src/runner/final-benchmark.js';
+import { assertDynamicBenchmarkHtml, buildModeMcpConfig, buildScoredPrompt, collectProviderUsage, createAttemptRunId, finalBenchmarkModes, parseFinalBenchmarkSelection, parseScoredCodexEvents, validateCompletedSummary } from '../src/runner/final-benchmark.js';
 import { prepareCodex, runNativeCodex } from '../src/runner/native-codex.js';
 import { createManifest } from '../src/runner/manifest.js';
 import { validateTask } from '../src/runner/oracle.js';
 import { writeAttemptResult } from '../src/runner/result-writer.js';
-import { summarizeAttempts, renderTokenReport } from '../src/runner/token-report.js';
+import { isAcceptedBenchmarkMatrix, summarizeAttempts, renderTokenReport } from '../src/runner/token-report.js';
 
 // Intentionally pinned: this command never chooses or falls back to another model.
 const model = 'gpt-5.6-terra';
 const requested = process.argv.slice(2);
 const modes = finalBenchmarkModes();
 const tasks = JSON.parse(await readFile(new URL('../fixtures/tasks.json', import.meta.url), 'utf8'));
-let selectedModes = modes;
-let taskId = 'T1';
-if (requested.length === 1) [taskId] = requested;
-else if (requested.length === 2) { selectedModes = [requested[0] === 'dom' ? 'visual' : requested[0]]; taskId = requested[1]; }
-else if (requested.length) throw new Error('usage: bun run benchmark [T1 | webmcp|playwright-mcp|dom T1]');
-const task = tasks.find((candidate) => candidate.id === taskId);
-if (!task || selectedModes.some((mode) => !modes.includes(mode))) throw new Error('Unknown benchmark mode or task');
-const reportScope = { expectedCells: selectedModes.map((mode) => ({ mode, taskId })) };
+const { taskIds, selectedModes } = parseFinalBenchmarkSelection(requested, tasks.map((task) => task.id), modes);
+const reportScope = { expectedCells: taskIds.flatMap((taskId) => selectedModes.map((mode) => ({ mode, taskId }))) };
 const batchId = `${new Date().toISOString().replaceAll(':', '-')}-${randomUUID().slice(0, 8)}`;
 const outputDir = resolve(process.env.BENCHMARK_OUTPUT_DIR ?? 'results/codex-tokens', batchId);
-await mkdir(outputDir, { recursive: true });
+const stagingDir = await mkdtemp(join(tmpdir(), 'browser-benchmark-'));
 const context = await prepareCodex();
 const rows = [];
 
-for (const mode of selectedModes) {
-  console.error(`Running ${model}: ${mode}/${task.id}`);
+for (const taskId of taskIds) {
+  const task = tasks.find((candidate) => candidate.id === taskId);
+  for (const mode of selectedModes) {
+    console.error(`Running ${model}: ${mode}/${task.id}`);
   const server = await createBenchmarkServer();
   const started = performance.now();
   let events = [];
@@ -73,18 +70,30 @@ for (const mode of selectedModes) {
   };
   if (summary.status === 'completed') validateCompletedSummary(summary);
   const resultPaths = await writeAttemptResult({
-    outputDir, runId: mode,
+    outputDir: stagingDir, runId: createAttemptRunId(task.id, mode),
     manifest: createManifest({ mode, modelId: model, versions: { codex: context.version }, providerConfig: { provider: 'codex-subscription-native', taskId: task.id, server: mcp?.serverName, interface: summary.interface, enabledTools: mcp?.enabledTools } }),
     summary, events,
   });
   await writeFile(join(resultPaths.attemptDir, 'stderr.log'), stderr);
-  rows.push({ ...summary, resultPaths });
-  // Persist every attempt before starting another, including failures. No hidden retries or old results.
-  const matrix = summarizeAttempts(rows, reportScope);
-  await writeFile(join(outputDir, 'matrix.json'), `${JSON.stringify(matrix, null, 2)}\n`);
-  await writeFile(join(outputDir, 'matrix.md'), renderTokenReport(matrix));
+    rows.push({ ...summary, resultPaths });
+    // Persist every attempt before starting another, including failures. No hidden retries or old results.
+    const matrix = summarizeAttempts(rows, reportScope);
+    await writeFile(join(stagingDir, 'matrix.json'), `${JSON.stringify(matrix, null, 2)}\n`);
+    await writeFile(join(stagingDir, 'matrix.md'), renderTokenReport(matrix));
+  }
 }
 const matrix = summarizeAttempts(rows, reportScope);
-console.log(renderTokenReport(matrix));
-console.log(`Results: ${join(outputDir, 'matrix.json')}`);
-if (matrix.status !== 'completed') process.exitCode = 1;
+if (isAcceptedBenchmarkMatrix(matrix)) {
+  await mkdir(dirname(outputDir), { recursive: true });
+  const persistedMatrix = JSON.stringify(matrix, null, 2).replaceAll(stagingDir, outputDir);
+  await writeFile(join(stagingDir, 'matrix.json'), `${persistedMatrix}\n`);
+  await writeFile(join(stagingDir, 'matrix.md'), renderTokenReport(matrix));
+  await rename(stagingDir, outputDir);
+  console.log(renderTokenReport(matrix));
+  console.log(`Results: ${join(outputDir, 'matrix.json')}`);
+} else {
+  await rm(stagingDir, { recursive: true, force: true });
+  console.log(renderTokenReport(matrix));
+  console.log('Results rejected: no local benchmark record was retained.');
+  process.exitCode = 1;
+}

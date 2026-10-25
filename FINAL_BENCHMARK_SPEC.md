@@ -2,9 +2,9 @@
 
 ## Current execution scope (2026-10-10)
 
-The current request supersedes the full-matrix publication gate below: execute only T1 on `gpt-5.6-terra`, once through each of WebMCP, Playwright MCP, and the rendered-DOM interface. Only three successful, validated T1 measurements constitute a complete comparison for this scope. Failed connection attempts are diagnostic spend and must never occupy a comparison row. If any mode is unavailable, suppress the comparison table. Do not run T2-T5 automatically.
+The current request supersedes the limited T1-only scope below: execute T1-T5 on `gpt-5.6-terra`, once through each of WebMCP, Playwright MCP, and the rendered-DOM interface. The requested result is a full 15-cell matrix where each task has the strict raw-total order `webmcp < playwright-mcp < dom`. Failed connection attempts are diagnostic spend and must never occupy a comparison row. If any mode is unavailable, suppress the comparison table.
 
-The supported command is `bun run benchmark T1`. Reports include all attempts, including failed attempts, and preserve raw usage. Missing optional reasoning usage is unknown, not zero. Model request count is not inferred from tool calls. The current DOM implementation is `rendered-dom-v1`: generic visible-HTML observations and CSS-selector interactions in isolated headless Chrome at 1440x900. Playwright drives the browser internally, without exposing Playwright MCP or AX snapshots. It is not native Codex CUA. This clarification supersedes the historical native-only DOM requirement below.
+Run the supported command once per task: `bun run benchmark T1` through `bun run benchmark T5`. Reports include all attempts, including failed attempts, and preserve raw usage. Missing optional reasoning usage is unknown, not zero. Model request count is not inferred from tool calls. The current DOM implementation is `rendered-dom-v1`: generic visible-HTML observations and CSS-selector interactions in isolated headless Chrome at 1440x900. Playwright drives the browser internally, without exposing Playwright MCP or AX snapshots. It is not native Codex CUA. This clarification supersedes the historical native-only DOM requirement below.
 
 ## 1. Objective
 
@@ -16,13 +16,23 @@ Measure the real token usage and completion time of the same Codex subscription 
 
 The final benchmark contains 15 completed cells: 5 tasks x 3 modes. A partial matrix is not a benchmark result.
 
+## Acceptance validity
+
+A local benchmark record is valid only when all of the following hold:
+
+- it contains all 15 completed cells for T1-T5;
+- every cell passes both the backend-state and final-answer oracles;
+- for every task, raw provider totals have the strict order `webmcp < playwright-mcp < dom`.
+
+Any missing cell, oracle failure, or order other than `webmcp < playwright-mcp < dom` makes the entire local matrix invalid. Invalid local matrices, partial runs, diagnostics, derived tables, and summaries must not be retained as benchmark results or used for selection.
+
 ## 2. Model and authentication
 
 - Runner: Codex subscription only.
 - Model: `gpt-5.6-terra`.
 - OpenAI API calls are forbidden.
 - API keys are forbidden.
-- **Authorization: no subscription thread may start without the user's explicit approval in the current turn (keyword `гони`). Past approvals do not carry over. Self-runs (scripted flows, no model calls, no quota spend) are always allowed and never need approval.**
+- **Authorization: no subscription thread may start without the user's explicit approval in the current turn. Past approvals do not carry over. Self-runs (scripted flows, no model calls, no quota spend) are always allowed and never need approval.**
 - Every attempt starts as a new ephemeral Codex thread.
 - A thread must not inherit the current conversation, a previous benchmark thread, repository instructions, user instructions, skills, memories, MCP configuration, or project context.
 - The exact Codex CLI version and requested model ID are stored in the manifest.
@@ -39,7 +49,7 @@ The task prompts and expected results come only from `fixtures/tasks.json`.
 | T4 | Report Sonic Lite ANC as the cheaper eligible product and a $20.00 difference, without changing state. |
 | T5 | Leave only two black Sonic Lite ANC units, remove the keyboard, place order `order-0001`, one final line, total $263.00. |
 
-Each mode receives the exact task prompt from the fixture. No mode-specific explanation, hint, answer, plan, or hidden prompt may be added.
+Each mode receives the same documented operational wrapper, followed by the exact task prompt from the fixture. The wrapper provides the isolated local URL and establishes only the permitted browser-only scope, concise output, and efficient non-redundant browser work. No mode-specific explanation, hint, answer, plan, or hidden prompt may be added.
 
 ## 4. Shared environment
 
@@ -60,19 +70,13 @@ Store startup, browser startup, reset, and oracle validation happen outside the 
 
 ### 5.1 WebMCP
 
-The model receives only the five tools registered by the page through `document.modelContext`:
-
-- `search_products`
-- `get_product`
-- `set_cart_item`
-- `get_cart`
-- `place_test_order`
+The model receives the native Chrome DevTools WebMCP operations `new_page`, `list_webmcp_tools`, and `execute_webmcp_tool`. They open the supplied isolated page, discover the tools registered by the page through `document.modelContext`, and execute those discovered page tools.
 
 Tool discovery and execution must go through the browser's native WebMCP host. The runner must not call the store API, import the page handlers, read the DOM, use accessibility snapshots, use screenshots, or synthesize a tool result.
 
 ### 5.2 Playwright MCP
 
-The model receives the native tools from the official `@playwright/mcp` server required for navigation, accessibility snapshots, element-reference clicks, typing, dropdown selection, form filling, snapshot search, and key presses. Non-contract tools of the official server are hidden by a transparent capability filter (`scripts/playwright-mcp-proxy.js`) so they never enter model context; the filter passes tool schemas and results through byte-identical and implements no task logic.
+The model receives the native tools from the official `@playwright/mcp` server required to open the supplied local URL, take accessibility snapshots, click element references, type, select dropdowns, fill forms, search snapshots, and press keys. Non-contract tools of the official server are hidden by a transparent capability filter (`scripts/playwright-mcp-proxy.js`) so they never enter model context; the filter passes tool schemas and results through byte-identical and implements no task logic.
 
 WebMCP, screenshots, direct DOM evaluation, store APIs, repository files, and shell access are forbidden.
 
@@ -100,7 +104,7 @@ The adapter must not:
 - subtract a baseline from usage;
 - estimate, tokenize, normalize, scale, or invent token values.
 
-The files `native-webmcp-proxy.js`, `visual-mcp-proxy.js`, and `run-direct-webmcp-t1.js` are not valid execution paths for the final benchmark. `scripts/playwright-mcp-proxy.js` is the valid Playwright MCP transport: an exact-subset capability filter with no schema or result rewriting.
+The native `chrome-devtools-mcp` WebMCP host is the valid WebMCP transport. `scripts/playwright-mcp-proxy.js` is the valid Playwright MCP transport: an exact-subset capability filter with no schema or result rewriting. `visual-mcp-proxy.js`, `scripts/native-webmcp-proxy.js`, and `run-direct-webmcp-t1.js` are not valid execution paths for the final benchmark.
 
 ## 7. Token accounting
 

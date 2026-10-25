@@ -18,7 +18,6 @@ before(async () => {
   page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
   await page.goto(baseUrl);
 });
-
 after(async () => {
   await page?.close();
   await browser?.close();

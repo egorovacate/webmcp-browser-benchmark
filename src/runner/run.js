@@ -1,4 +1,7 @@
-import { createModelClient } from './model-client.js';
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { createAgentLoop } from './agent-loop.js';
+import { validateTask } from './oracle.js';
 import { createVisualMode } from './modes/visual.js';
 import { createPlaywrightMcpMode } from './modes/playwright-mcp.js';
 import { createWebMcpMode } from './modes/webmcp.js';
@@ -10,6 +13,8 @@ const modes = {
 };
 const taskIds = new Set(['T1', 'T2', 'T3', 'T4', 'T5']);
 const stages = new Set(['development', 'smoke', 'pilot', 'full']);
+const tasksPath = fileURLToPath(new URL('../../fixtures/tasks.json', import.meta.url));
+const tasks = JSON.parse(readFileSync(tasksPath, 'utf8'));
 
 function getMode(name) {
   if (!modes[name]) throw new Error(`unknown benchmark mode: ${name}`);
@@ -22,7 +27,21 @@ function validateInputs({ mode, taskId, stage }) {
   return getMode(mode);
 }
 
-export async function runBenchmark({ mode, taskId, stage = 'development', dryRun = false, modelId, providerCall } = {}) {
+function getTask(taskId) {
+  const task = tasks.find((candidate) => candidate.id === taskId);
+  if (!task) throw new Error(`unknown benchmark task: ${taskId}`);
+  return task;
+}
+
+export async function runBenchmark({
+  mode,
+  taskId,
+  stage = 'development',
+  dryRun = false,
+  modelId,
+  provider,
+  runtime,
+} = {}) {
   const selectedMode = validateInputs({ mode, taskId, stage });
   if (stage === 'full' && process.env.FULL_BENCHMARK_APPROVED !== '1') {
     throw new Error('full benchmark requires explicit approval');
@@ -39,13 +58,39 @@ export async function runBenchmark({ mode, taskId, stage = 'development', dryRun
     };
   }
 
-  const client = createModelClient({ modelId, providerCall });
+  if (provider && runtime) {
+    const task = getTask(taskId);
+    const loop = createAgentLoop({
+      provider,
+      tools: runtime.tools,
+      toolDefinitions: runtime.toolDefinitions,
+      maxTurns: runtime.maxTurns,
+    });
+    const run = await loop.run({ prompt: task.prompt });
+    const verdict = validateTask(taskId, {
+      snapshot: await runtime.getSnapshot(),
+      finalAnswer: run.finalText,
+    });
+    return {
+      status: 'completed',
+      mode,
+      taskId,
+      stage,
+      modelId: provider.model ?? modelId ?? null,
+      finalText: run.finalText,
+      elapsedMs: run.elapsedMs,
+      events: run.events,
+      metrics: run.metrics,
+      ...verdict,
+    };
+  }
+
   return {
-    status: 'ready',
+    status: 'awaiting-provider',
     mode,
     taskId,
     stage,
-    modelId: client.modelId,
+    modelId: modelId ?? null,
     capabilities: selectedMode.allowedCapabilities,
   };
 }

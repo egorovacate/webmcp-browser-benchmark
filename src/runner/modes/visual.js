@@ -1,4 +1,4 @@
-const capabilities = ['navigate', 'screenshot', 'coordinate_click', 'type', 'press', 'scroll'];
+const capabilities = ['navigate', 'dom', 'click', 'type', 'press', 'scroll'];
 
 export function createVisualMode() {
   return {
@@ -8,7 +8,7 @@ export function createVisualMode() {
       return capabilities.map((name) => ({ name, mode: 'visual' }));
     },
     validateObservation(observation = {}) {
-      if (observation.accessibilitySnapshot || observation.dom || observation.webmcpTools) {
+      if (observation.screenshot || observation.accessibilitySnapshot || observation.webmcpTools) {
         throw new Error('forbidden observation for visual mode');
       }
       return true;

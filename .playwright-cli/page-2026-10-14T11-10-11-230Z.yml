@@ -1,0 +1,350 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - link "Northstar Store home" [ref=e4] [cursor=pointer]:
+      - /url: "#catalog"
+      - generic [ref=e5]: "N"
+      - heading "Northstar Store" [level=2] [ref=e6]
+    - navigation "Primary navigation" [ref=e7]:
+      - link "Catalog" [ref=e8] [cursor=pointer]:
+        - /url: "#catalog"
+      - link "Cart 0" [ref=e9] [cursor=pointer]:
+        - /url: "#cart"
+        - text: Cart
+        - generic [ref=e10]: "0"
+      - link "Checkout" [ref=e11] [cursor=pointer]:
+        - /url: "#checkout"
+  - main [ref=e12]:
+    - status [ref=e13]: Synthetic store for a browser-agent benchmark. No payment is processed.
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - paragraph [ref=e16]: WebMCP Browser Benchmark
+        - heading [level=1] [ref=e17]:
+          - text: Shop the signal,
+          - emphasis [ref=e18]: skip the noise.
+        - paragraph [ref=e19]: A deterministic store built to compare browser automation with an in-page, typed agent interface.
+        - generic [ref=e20]:
+          - link "Browse catalog" [ref=e21] [cursor=pointer]:
+            - /url: "#catalog"
+          - link "Try synthetic checkout →" [ref=e22] [cursor=pointer]:
+            - /url: "#checkout"
+      - complementary "Benchmark information" [ref=e23]:
+        - generic [ref=e24]: Agent-ready store
+        - paragraph [ref=e26]:
+          - text: One shared cart.
+          - strong [ref=e27]: Two ways to operate it.
+        - generic [ref=e28]:
+          - generic [ref=e29]: WebMCP
+          - generic [ref=e30]: Playwright MCP
+        - generic [ref=e31]:
+          - generic [ref=e32]:
+            - strong [ref=e33]: "24"
+            - generic [ref=e34]: products
+          - generic [ref=e35]:
+            - strong [ref=e36]: "5"
+            - generic [ref=e37]: tasks
+          - generic [ref=e38]:
+            - strong [ref=e39]: "0"
+            - generic [ref=e40]: real charges
+    - generic [ref=e41]:
+      - generic [ref=e42]: Shared cart state
+      - generic [ref=e43]: Deterministic fixtures
+      - generic [ref=e44]: Document-level WebMCP
+      - generic [ref=e45]: Zero payment processing
+    - region [ref=e500]:
+      - region "Catalog filters" [ref=e501]:
+        - generic [ref=e502]:
+          - paragraph [ref=e503]: Curated inventory
+          - heading "Find your next setup." [level=2] [ref=e504]
+          - paragraph [ref=e505]: 24 deterministic products
+        - generic [ref=e506]:
+          - generic [ref=e507]:
+            - text: Search
+            - searchbox "Search" [ref=e508]
+          - generic [ref=e509]:
+            - text: Category
+            - combobox "Category" [ref=e511]:
+              - option "All categories" [selected]
+              - option "Headphones"
+              - option "Keyboards"
+              - option "Mice"
+              - option "Monitors"
+          - generic [ref=e512]:
+            - text: Feature
+            - combobox "Feature" [ref=e514]:
+              - option "All features" [selected]
+              - option "Noise cancelling"
+              - option "Wireless"
+              - option "Mechanical"
+              - option "Gaming"
+          - generic [ref=e515]:
+            - checkbox "In stock only" [ref=e516]
+            - generic [ref=e517]: In stock only
+          - button "Apply filters" [ref=e518] [cursor=pointer]
+      - generic [ref=e519]:
+        - article [ref=e520]:
+          - generic [ref=e521]: In stock
+          - generic [ref=e526]:
+            - generic [ref=e527]:
+              - generic [ref=e528]: monitors
+              - generic [ref=e529]: "4.8"
+            - heading "Studio 32" [level=3] [ref=e532]
+            - paragraph [ref=e533]: Large 4K monitor for creative and technical work.
+          - generic [ref=e534]:
+            - generic [ref=e535]: $449.00
+            - button "View Studio 32" [ref=e536] [cursor=pointer]
+        - article [ref=e537]:
+          - generic [ref=e538]: In stock
+          - generic [ref=e543]:
+            - generic [ref=e544]:
+              - generic [ref=e545]: headphones
+              - generic [ref=e546]: "4.7"
+            - heading "Studio Max" [level=3] [ref=e549]
+            - paragraph [ref=e550]: High-fidelity studio headphones with a wired connection.
+          - generic [ref=e551]:
+            - generic [ref=e552]: $219.00
+            - button "View Studio Max" [ref=e553] [cursor=pointer]
+        - article [ref=e554]:
+          - generic [ref=e555]: In stock
+          - generic [ref=e560]:
+            - generic [ref=e561]:
+              - generic [ref=e562]: headphones
+              - generic [ref=e563]: "4.6"
+            - heading "Quiet Pro 2" [level=3] [ref=e566]
+            - paragraph [ref=e567]: Over-ear wireless headphones for long listening sessions.
+          - generic [ref=e568]:
+            - generic [ref=e569]: $149.00
+            - button "View Quiet Pro 2" [ref=e570] [cursor=pointer]
+        - article [ref=e571]:
+          - generic [ref=e572]: In stock
+          - generic [ref=e577]:
+            - generic [ref=e578]:
+              - generic [ref=e579]: monitors
+              - generic [ref=e580]: "4.6"
+            - heading "Color 27" [level=3] [ref=e583]
+            - paragraph [ref=e584]: 27-inch monitor with wide color coverage.
+          - generic [ref=e585]:
+            - generic [ref=e586]: $299.00
+            - button "View Color 27" [ref=e587] [cursor=pointer]
+        - article [ref=e588]:
+          - generic [ref=e589]: In stock
+          - generic [ref=e594]:
+            - generic [ref=e595]:
+              - generic [ref=e596]: headphones
+              - generic [ref=e597]: "4.5"
+            - heading "Travel Calm" [level=3] [ref=e600]
+            - paragraph [ref=e601]: Foldable headphones with travel-ready noise cancellation.
+          - generic [ref=e602]:
+            - generic [ref=e603]: $179.00
+            - button "View Travel Calm" [ref=e604] [cursor=pointer]
+        - article [ref=e605]:
+          - generic [ref=e606]: In stock
+          - generic [ref=e611]:
+            - generic [ref=e612]:
+              - generic [ref=e613]: keyboards
+              - generic [ref=e614]: "4.5"
+            - heading "Slate 75" [level=3] [ref=e617]
+            - paragraph [ref=e618]: Compact mechanical keyboard with hot-swappable switches.
+          - generic [ref=e619]:
+            - generic [ref=e620]: $109.00
+            - button "View Slate 75" [ref=e621] [cursor=pointer]
+        - article [ref=e622]:
+          - generic [ref=e623]: In stock
+          - generic [ref=e628]:
+            - generic [ref=e629]:
+              - generic [ref=e630]: monitors
+              - generic [ref=e631]: "4.5"
+            - heading "Fast 27" [level=3] [ref=e634]
+            - paragraph [ref=e635]: Fast refresh gaming monitor with adaptive sync.
+          - generic [ref=e636]:
+            - generic [ref=e637]: $279.00
+            - button "View Fast 27" [ref=e638] [cursor=pointer]
+        - article [ref=e639]:
+          - generic [ref=e640]: In stock
+          - generic [ref=e645]:
+            - generic [ref=e646]:
+              - generic [ref=e647]: mice
+              - generic [ref=e648]: "4.5"
+            - heading "Track Pro" [level=3] [ref=e651]
+            - paragraph [ref=e652]: Precision mouse with adjustable tracking and side buttons.
+          - generic [ref=e653]:
+            - generic [ref=e654]: $89.00
+            - button "View Track Pro" [ref=e655] [cursor=pointer]
+        - article [ref=e656]:
+          - generic [ref=e657]: In stock
+          - generic [ref=e662]:
+            - generic [ref=e663]:
+              - generic [ref=e664]: headphones
+              - generic [ref=e665]: "4.4"
+            - heading "Sonic Lite ANC" [level=3] [ref=e668]
+            - paragraph [ref=e669]: Compact wireless headphones with active noise cancellation.
+          - generic [ref=e670]:
+            - generic [ref=e671]: $129.00
+            - button "View Sonic Lite ANC" [ref=e672] [cursor=pointer]
+        - article [ref=e673]:
+          - generic [ref=e674]: In stock
+          - generic [ref=e679]:
+            - generic [ref=e680]:
+              - generic [ref=e681]: keyboards
+              - generic [ref=e682]: "4.4"
+            - heading "Gaming Hex" [level=3] [ref=e685]
+            - paragraph [ref=e686]: RGB mechanical keyboard with programmable keys.
+          - generic [ref=e687]:
+            - generic [ref=e688]: $129.00
+            - button "View Gaming Hex" [ref=e689] [cursor=pointer]
+        - article [ref=e690]:
+          - generic [ref=e691]: In stock
+          - generic [ref=e696]:
+            - generic [ref=e697]:
+              - generic [ref=e698]: monitors
+              - generic [ref=e699]: "4.4"
+            - heading "Wide 29" [level=3] [ref=e702]
+            - paragraph [ref=e703]: Ultrawide monitor for multitasking and spreadsheets.
+          - generic [ref=e704]:
+            - generic [ref=e705]: $249.00
+            - button "View Wide 29" [ref=e706] [cursor=pointer]
+        - article [ref=e707]:
+          - generic [ref=e708]: In stock
+          - generic [ref=e713]:
+            - generic [ref=e714]:
+              - generic [ref=e715]: mice
+              - generic [ref=e716]: "4.4"
+            - heading "Arcade X" [level=3] [ref=e719]
+            - paragraph [ref=e720]: Gaming mouse with a high-speed sensor and RGB shell.
+          - generic [ref=e721]:
+            - generic [ref=e722]: $99.00
+            - button "View Arcade X" [ref=e723] [cursor=pointer]
+        - article [ref=e724]:
+          - generic [ref=e725]: In stock
+          - generic [ref=e730]:
+            - generic [ref=e731]:
+              - generic [ref=e732]: keyboards
+              - generic [ref=e733]: "4.3"
+            - heading "Copper Full" [level=3] [ref=e736]
+            - paragraph [ref=e737]: Full-size mechanical keyboard with a number pad.
+          - generic [ref=e738]:
+            - generic [ref=e739]: $139.00
+            - button "View Copper Full" [ref=e740] [cursor=pointer]
+        - article [ref=e741]:
+          - generic [ref=e742]: In stock
+          - generic [ref=e747]:
+            - generic [ref=e748]:
+              - generic [ref=e749]: mice
+              - generic [ref=e750]: "4.3"
+            - heading "Lift Ergo" [level=3] [ref=e753]
+            - paragraph [ref=e754]: Vertical ergonomic mouse for long office sessions.
+          - generic [ref=e755]:
+            - generic [ref=e756]: $119.00
+            - button "View Lift Ergo" [ref=e757] [cursor=pointer]
+        - article [ref=e758]:
+          - generic [ref=e759]: In stock
+          - generic [ref=e764]:
+            - generic [ref=e765]:
+              - generic [ref=e766]: headphones
+              - generic [ref=e767]: "4.2"
+            - heading "Bass Runner" [level=3] [ref=e770]
+            - paragraph [ref=e771]: Sweat-resistant headphones for daily runs.
+          - generic [ref=e772]:
+            - generic [ref=e773]: $99.00
+            - button "View Bass Runner" [ref=e774] [cursor=pointer]
+        - article [ref=e775]:
+          - generic [ref=e776]: In stock
+          - generic [ref=e781]:
+            - generic [ref=e782]:
+              - generic [ref=e783]: keyboards
+              - generic [ref=e784]: "4.2"
+            - heading "Wood Arc" [level=3] [ref=e787]
+            - paragraph [ref=e788]: Decorative wireless keyboard with a wood palm rest.
+          - generic [ref=e789]:
+            - generic [ref=e790]: $159.00
+            - button "View Wood Arc" [ref=e791] [cursor=pointer]
+        - article [ref=e792]:
+          - generic [ref=e793]: In stock
+          - generic [ref=e798]:
+            - generic [ref=e799]:
+              - generic [ref=e800]: mice
+              - generic [ref=e801]: "4.2"
+            - heading "Orbit 2" [level=3] [ref=e804]
+            - paragraph [ref=e805]: Ergonomic wireless mouse with a silent scroll wheel.
+          - generic [ref=e806]:
+            - generic [ref=e807]: $59.00
+            - button "View Orbit 2" [ref=e808] [cursor=pointer]
+        - article [ref=e809]:
+          - generic [ref=e810]: In stock
+          - generic [ref=e815]:
+            - generic [ref=e816]:
+              - generic [ref=e817]: headphones
+              - generic [ref=e818]: "4.1"
+            - heading "Pulse Mini" [level=3] [ref=e821]
+            - paragraph [ref=e822]: Small wireless earbuds for commuting and calls.
+          - generic [ref=e823]:
+            - generic [ref=e824]: $89.00
+            - button "View Pulse Mini" [ref=e825] [cursor=pointer]
+        - article [ref=e826]:
+          - generic [ref=e827]: In stock
+          - generic [ref=e832]:
+            - generic [ref=e833]:
+              - generic [ref=e834]: monitors
+              - generic [ref=e835]: "4.1"
+            - heading "View 24" [level=3] [ref=e838]
+            - paragraph [ref=e839]: 24-inch full HD monitor for everyday work.
+          - generic [ref=e840]:
+            - generic [ref=e841]: $129.00
+            - button "View View 24" [ref=e842] [cursor=pointer]
+        - article [ref=e843]:
+          - generic [ref=e844]: In stock
+          - generic [ref=e849]:
+            - generic [ref=e850]:
+              - generic [ref=e851]: keyboards
+              - generic [ref=e852]: "4.0"
+            - heading "Air Compact" [level=3] [ref=e855]
+            - paragraph [ref=e856]: Low-profile wireless keyboard for small desks.
+          - generic [ref=e857]:
+            - generic [ref=e858]: $79.00
+            - button "View Air Compact" [ref=e859] [cursor=pointer]
+        - article [ref=e860]:
+          - generic [ref=e861]: In stock
+          - generic [ref=e866]:
+            - generic [ref=e867]:
+              - generic [ref=e868]: monitors
+              - generic [ref=e869]: "4.0"
+            - heading "Read 22" [level=3] [ref=e872]
+            - paragraph [ref=e873]: Compact monitor with a reading-friendly matte panel.
+          - generic [ref=e874]:
+            - generic [ref=e875]: $99.00
+            - button "View Read 22" [ref=e876] [cursor=pointer]
+        - article [ref=e877]:
+          - generic [ref=e878]: In stock
+          - generic [ref=e883]:
+            - generic [ref=e884]:
+              - generic [ref=e885]: mice
+              - generic [ref=e886]: "4.0"
+            - heading "Pocket Go" [level=3] [ref=e889]
+            - paragraph [ref=e890]: Small wireless mouse for travel and compact laptops.
+          - generic [ref=e891]:
+            - generic [ref=e892]: $39.00
+            - button "View Pocket Go" [ref=e893] [cursor=pointer]
+        - article [ref=e894]:
+          - generic [ref=e895]: In stock
+          - generic [ref=e900]:
+            - generic [ref=e901]:
+              - generic [ref=e902]: keyboards
+              - generic [ref=e903]: "3.9"
+            - heading "Quiet Office" [level=3] [ref=e906]
+            - paragraph [ref=e907]: Quiet membrane keyboard for shared workspaces.
+          - generic [ref=e908]:
+            - generic [ref=e909]: $49.00
+            - button "View Quiet Office" [ref=e910] [cursor=pointer]
+        - article [ref=e911]:
+          - generic [ref=e912]: In stock
+          - generic [ref=e917]:
+            - generic [ref=e918]:
+              - generic [ref=e919]: mice
+              - generic [ref=e920]: "3.8"
+            - heading "Glide Lite" [level=3] [ref=e923]
+            - paragraph [ref=e924]: Simple wired mouse with a lightweight shell.
+          - generic [ref=e925]:
+            - generic [ref=e926]: $29.00
+            - button "View Glide Lite" [ref=e927] [cursor=pointer]
+  - contentinfo [ref=e474]:
+    - generic [ref=e475]: Northstar Store
+    - generic [ref=e476]: Built for reproducible agent benchmarks

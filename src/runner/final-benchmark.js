@@ -4,9 +4,8 @@ import { fileURLToPath } from 'node:url';
 
 const require = createRequire(import.meta.url);
 const chromePackage = require.resolve('chrome-devtools-mcp/package.json');
-const playwrightPackage = require.resolve('@playwright/mcp/package.json');
 const chromeCli = join(dirname(chromePackage), 'build/src/bin/chrome-devtools-mcp.js');
-const playwrightCli = join(dirname(playwrightPackage), 'cli.js');
+const benchmarkRoot = dirname(fileURLToPath(new URL('../../package.json', import.meta.url)));
 
 const modeTools = {
   webmcp: ['new_page', 'list_webmcp_tools', 'execute_webmcp_tool'],
@@ -27,11 +26,11 @@ export function buildModeMcpConfig(mode, targetUrl) {
     return {
       serverName: 'browser_dom', command: 'node',
       commandArgs: [fileURLToPath(new URL('../../scripts/dom-mcp.js', import.meta.url)), targetUrl],
+      cwd: benchmarkRoot,
       enabledTools: [...modeTools.visual],
       interface: 'rendered-dom-v1',
     };
   }
-  const host = new URL(targetUrl).hostname;
   if (mode === 'webmcp') {
     return {
       serverName: 'native_webmcp',
@@ -54,7 +53,9 @@ export function buildModeMcpConfig(mode, targetUrl) {
         '--chromeArg=--enable-features=WebMCP',
         '--usageStatistics=false',
       ],
+      cwd: benchmarkRoot,
       enabledTools: [...modeTools[mode]],
+      interface: 'native_webmcp',
     };
   }
   const args = [
@@ -69,6 +70,7 @@ export function buildModeMcpConfig(mode, targetUrl) {
     serverName: 'native_playwright',
     command: 'node',
     commandArgs: args,
+    cwd: benchmarkRoot,
     enabledTools: [...modeTools[mode]],
   };
 }
@@ -78,7 +80,7 @@ export function buildScoredPrompt(_mode, targetUrl, taskPrompt) {
     `The isolated benchmark page is at ${targetUrl}.`,
     'Open only this URL in a new tab. When a browser name is required, use chrome. Do not inspect existing tabs.',
     'Use only the supplied browser tools. Do not use shell, files, source code, backend APIs, screenshots, or external network resources.',
-    'Complete the task in as few tool calls as possible. Do not re-read the page when you already have what the next action needs. Prefer narrow, scoped observations over full-page reads.',
+    'Complete the task in as few tool calls as possible. Do not re-read the page when you already have what the next action needs.',
     taskPrompt,
     'Return only the concise answer requested by the task after completing the browser work.',
   ].join('\n');
@@ -125,11 +127,29 @@ export function collectProviderUsage(events = []) {
   ]));
 }
 
+function isEmptyCodexResourceDiscovery(item = {}) {
+  const fields = {
+    list_mcp_resources: 'resources',
+    list_mcp_resource_templates: 'resourceTemplates',
+  };
+  const field = fields[item.tool];
+  if (item.type !== 'mcp_tool_call' || item.server !== 'codex' || !field || !Array.isArray(item.result?.content) || item.result.content.length !== 1) return false;
+  const text = item.result.content[0]?.text;
+  try {
+    const value = JSON.parse(text);
+    return value && typeof value === 'object' && !Array.isArray(value) &&
+      Object.keys(value).length === 1 && Array.isArray(value[field]) && value[field].length === 0;
+  } catch {
+    return false;
+  }
+}
+
 export function parseScoredCodexEvents(events = [], expectedMcp) {
   const forbidden = new Set(['command_execution', 'file_change', 'web_search_call', 'computer_action']);
   for (const event of events) {
     if (forbidden.has(event?.item?.type)) throw new Error(`forbidden capability used: ${event.item.type}`);
-    if (expectedMcp && event.item?.type === 'mcp_tool_call' &&
+    if (expectedMcp && event.type === 'item.completed' && event.item?.type === 'mcp_tool_call' &&
+      !isEmptyCodexResourceDiscovery(event.item) &&
       (event.item.server !== expectedMcp.serverName || !expectedMcp.enabledTools.includes(event.item.tool))) {
       throw new Error(`tool outside selected mode: ${event.item.server}/${event.item.tool}`);
     }
@@ -148,7 +168,7 @@ export function parseScoredCodexEvents(events = [], expectedMcp) {
     });
     if (!observed) throw new Error('scored thread did not read the rendered DOM');
   }
-  const toolCallCount = completedItems.filter((event) => event.item?.type === 'mcp_tool_call').length;
+  const toolCallCount = completedItems.filter((event) => event.item?.type === 'mcp_tool_call' && !isEmptyCodexResourceDiscovery(event.item)).length;
   const finalText = completedItems
     .filter((event) => event.item?.type === 'agent_message')
     .map((event) => messageText(event.item))
@@ -178,4 +198,24 @@ export function validateCompletedSummary(summary = {}) {
 
 export function finalBenchmarkModes() {
   return Object.keys(modeTools);
+}
+
+export function parseFinalBenchmarkSelection(requested = [], knownTaskIds = [], modes = finalBenchmarkModes()) {
+  let taskIds = ['T1'];
+  let selectedModes = modes;
+  if (requested.length === 1) taskIds = requested[0] === 'all' ? [...knownTaskIds] : [requested[0]];
+  else if (requested.length === 2) {
+    selectedModes = [requested[0] === 'dom' ? 'visual' : requested[0]];
+    taskIds = [requested[1]];
+  } else if (requested.length > 2) {
+    throw new Error('usage: bun run benchmark [T1 | all | webmcp|playwright-mcp|dom T1]');
+  }
+  if (!taskIds.length || taskIds.some((taskId) => !knownTaskIds.includes(taskId)) || selectedModes.some((mode) => !modes.includes(mode))) {
+    throw new Error('Unknown benchmark mode or task');
+  }
+  return { taskIds, selectedModes };
+}
+
+export function createAttemptRunId(taskId, mode) {
+  return `${taskId}-${mode}`;
 }

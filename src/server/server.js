@@ -152,7 +152,18 @@ export async function createBenchmarkServer({ catalog, port = 0, host = '127.0.0
     }
   });
 
-  await new Promise((resolve) => server.listen(port, host, resolve));
+  await new Promise((resolve, reject) => {
+    const onListening = () => {
+      server.off('error', onError);
+      resolve();
+    };
+    const onError = (error) => {
+      server.off('listening', onListening);
+      reject(error);
+    };
+    server.once('error', onError);
+    server.listen(port, host, onListening);
+  });
   const address = server.address();
   const actualPort = typeof address === 'object' && address ? address.port : port;
 
@@ -161,7 +172,13 @@ export async function createBenchmarkServer({ catalog, port = 0, host = '127.0.0
     store,
     resetToken,
     url: `http://${host}:${actualPort}`,
-    close: () => new Promise((resolve, reject) => server.close((error) => (error ? reject(error) : resolve()))),
+    close: () => new Promise((resolve, reject) => {
+      if (!server.listening) {
+        resolve();
+        return;
+      }
+      server.close((error) => (error ? reject(error) : resolve()));
+    }),
   };
 }
 

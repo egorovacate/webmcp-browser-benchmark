@@ -11,6 +11,26 @@ function notStarted() {
   throw new Error('Playwright MCP client is not started');
 }
 
+export function buildPlaywrightMcpArgs({
+  targetUrl,
+  browser = 'chrome',
+  headless = true,
+  isolated = true,
+  noWebMcp = true,
+  cliPath = defaultCliPath,
+  extraArgs = [],
+} = {}) {
+  if (!targetUrl) throw new Error('Playwright MCP target URL is required');
+  const args = [cliPath];
+  if (headless) args.push('--headless');
+  if (browser) args.push('--browser', browser);
+  if (isolated) args.push('--isolated');
+  if (noWebMcp) args.push('--no-webmcp');
+  args.push('--allowed-hosts', new URL(targetUrl).hostname);
+  args.push(...extraArgs);
+  return args;
+}
+
 export function createPlaywrightMcpClient({
   targetUrl,
   browser = 'chrome',
@@ -27,16 +47,9 @@ export function createPlaywrightMcpClient({
 
   return {
     async start() {
-      if (!targetUrl) throw new Error('Playwright MCP target URL is required');
       if (client) throw new Error('Playwright MCP client is already started');
 
-      const args = [cliPath];
-      if (headless) args.push('--headless');
-      if (browser) args.push('--browser', browser);
-      if (isolated) args.push('--isolated');
-      if (noWebMcp) args.push('--no-webmcp');
-      args.push('--allowed-hosts', new URL(targetUrl).hostname);
-      args.push(...extraArgs);
+      const args = buildPlaywrightMcpArgs({ targetUrl, browser, headless, isolated, noWebMcp, cliPath, extraArgs });
 
       client = new Client({ name: 'webmcp-browser-benchmark', version: '0.1.0' });
       transport = new StdioClientTransport({
