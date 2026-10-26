@@ -1,0 +1,21 @@
+{
+  "model": "claude-opus-5-5",
+  "test": "T2",
+  "interface": "playwright-mcp",
+  "mcpInterface": "native_playwright",
+  "total": 2340,
+  "input": 2330,
+  "output": 10,
+  "reasoning": "n/a",
+  "calls": 8,
+  "timeMs": 13534,
+  "schemaTokens": 1465,
+  "observationTokens": 865,
+  "callArgumentTokens": 89,
+  "wallClockMs": 34339,
+  "startedAt": "2026-10-26T14:37:36.475Z",
+  "finalAnswer": "Subtotal $258.00, total quantity 2",
+  "oraclePassed": true,
+  "finalAnswerPassed": true,
+  "failureCategory": null
+}

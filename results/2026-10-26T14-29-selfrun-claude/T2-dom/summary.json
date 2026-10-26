@@ -1,0 +1,21 @@
+{
+  "model": "claude-opus-5-5",
+  "test": "T2",
+  "interface": "dom",
+  "mcpInterface": "rendered-dom-v1",
+  "total": 6243,
+  "input": 6233,
+  "output": 10,
+  "reasoning": "n/a",
+  "calls": 6,
+  "timeMs": 3781,
+  "schemaTokens": 361,
+  "observationTokens": 5872,
+  "callArgumentTokens": 58,
+  "wallClockMs": 21799,
+  "startedAt": "2026-10-26T14:38:26.044Z",
+  "finalAnswer": "Subtotal $258.00, total quantity 2",
+  "oraclePassed": true,
+  "finalAnswerPassed": true,
+  "failureCategory": null
+}

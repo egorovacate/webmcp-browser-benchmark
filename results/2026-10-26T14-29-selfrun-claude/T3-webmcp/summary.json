@@ -1,0 +1,21 @@
+{
+  "model": "claude-opus-5-5",
+  "test": "T3",
+  "interface": "webmcp",
+  "mcpInterface": "native_webmcp",
+  "total": 1379,
+  "input": 1368,
+  "output": 11,
+  "reasoning": "n/a",
+  "calls": 5,
+  "timeMs": 6794,
+  "schemaTokens": 443,
+  "observationTokens": 925,
+  "callArgumentTokens": 129,
+  "wallClockMs": 20925,
+  "startedAt": "2026-10-26T14:38:58.457Z",
+  "finalAnswer": "Order order-0001, total $134.00",
+  "oraclePassed": true,
+  "finalAnswerPassed": true,
+  "failureCategory": null
+}

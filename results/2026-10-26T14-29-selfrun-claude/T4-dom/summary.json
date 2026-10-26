@@ -1,0 +1,21 @@
+{
+  "model": "claude-opus-5-5",
+  "test": "T4",
+  "interface": "dom",
+  "mcpInterface": "rendered-dom-v1",
+  "total": 5531,
+  "input": 5520,
+  "output": 11,
+  "reasoning": "n/a",
+  "calls": 6,
+  "timeMs": 1693,
+  "schemaTokens": 361,
+  "observationTokens": 5159,
+  "callArgumentTokens": 59,
+  "wallClockMs": 7054,
+  "startedAt": "2026-10-26T14:42:09.555Z",
+  "finalAnswer": "Sonic Lite ANC is cheaper by $20.00",
+  "oraclePassed": true,
+  "finalAnswerPassed": true,
+  "failureCategory": null
+}

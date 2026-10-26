@@ -1,0 +1,121 @@
+[
+  {
+    "name": "open_page",
+    "description": "Open the benchmark URL in a new isolated Chrome tab and read its rendered DOM.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "dom",
+    "description": "Read the rendered DOM, including text and interactive elements. Optionally scope the read to a CSS selector. Scripts, styles, hidden elements and SVG internals are omitted.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "selector": {
+          "type": "string"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "click",
+    "description": "Click one visible element identified by a CSS selector.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "selector": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "selector"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "type",
+    "description": "Fill an input identified by a CSS selector.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "selector": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "selector",
+        "text"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "select",
+    "description": "Select an option in a dropdown by its value.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "selector": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "selector",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "press",
+    "description": "Press a key on an element identified by a CSS selector.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "selector": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "selector",
+        "key"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "scroll",
+    "description": "Scroll the page by pixel deltas.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "deltaY": {
+          "type": "number"
+        },
+        "deltaX": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "deltaY"
+      ],
+      "additionalProperties": false
+    }
+  }
+]
